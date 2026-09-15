@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>DHC RTI</title>
+    <link rel="stylesheet" href="./assets/css/bootstarp.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.woff">
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons.woff2">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <div class="main">
+        <header class="header_bg"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="logo_content login_page_">
+                            <a href="#">
+                                <img src="#" alt=""></a>
+                            <div class="logo-content">
+                                <h4>High Court of Delhi</h4>
+                                <h4>RTI System</h4>
+                            </div>
+                            <a href="#">
+                                <img src="./assets/logo/Emblem_of_India.svg" alt="" class="emblem w-100"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg_spacing">
+            <div class='container-fluid'>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form_heading custom_cenetr">
+                            <h4 style="text-align:center">User Registration Form for RTI Application</h4>
+                        </div>
+
+                        <div class=" h-auto mb-4">
+                            <div class="mt-5">
+                                <form action="#" method="post" class="reg-section" id="validateForm"
+                                    enctype="multipart/form-data" autocomplete="off">
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Are you a Citizen of India?
+                                            <span class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+
+                                            <select name="citizen" class="form-select select-box-w" id="displaycitizen"
+                                                onchange="notcitizen()">
+                                                <option value="Y">Yes</option>
+                                                <option value="N">No</option>
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Name<span
+                                                class="error">*</span>
+                                        </div>
+                                        <div class="ccol-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" name="name" id="displayname"
+                                                placeholder="Please enter your name" value="" required>
+                                            <span class="text-danger" id="result">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Father's Name<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" name="fathername"
+                                                id="displayfathername" placeholder="Please enter your father name"
+                                                value="" required>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Gender</div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <select name="gender" id="displaygender" class="form-select select-box-w">
+                                                <option value="M">Male</option>
+                                                <option value="F">Female</option>
+                                                <option value="O">Other</option>
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Address<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <textarea rows="3" placeholder="Please enter correct address..."
+                                                name="address" id="displayaddress" class="form-control"></textarea>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">State<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <select name="state" id="displaystate" class="form-select select-box-w"
+                                                required>
+                                                <option value="">Select State</option>
+                                                <option value="AN">Andman &amp; Nicobar Islands</option>
+                                                <option value="AR">Arunanchal Pradesh</option>
+                                                <option value="AS">Assam</option>
+                                                <option value="BR">Bihar</option>
+                                                <option value="CH">Chandigarh</option>
+                                                <option value="CG">Chattisgarh</option>
+                                                <option value="DN">Dadra &amp; Nagar Haveli</option>
+                                                <option value="DD">Daman &amp; Diu</option>
+                                                <option value="DL">Delhi</option>
+                                                <option value="GA">GOA</option>
+                                                <option value="GJ">Gujrat</option>
+                                                <option value="HR">Haryana</option>
+                                                <option value="HP">Himachal Pradesh</option>
+                                                <option value="JK">Jammu &amp; Kashmir</option>
+                                                <option value="JH">Jharkhand</option>
+                                                <option value="KA">Karnataka</option>
+                                                <option value="KL">Kerala</option>
+                                                <option value="LK">Ladakh</option>
+                                                <option value="LD">Lakshdeep</option>
+                                                <option value="MP">Madhya Pradesh</option>
+                                                <option value="MH">Maharashtra</option>
+                                                <option value="MN">Manipur</option>
+                                                <option value="ML">Meghalaya</option>
+                                                <option value="MZ">Mizoram</option>
+                                                <option value="NL">Nagaland</option>
+                                                <option value="OR">Orissa</option>
+                                                <option value="PY">Pondicherry</option>
+                                                <option value="PB">Punjab</option>
+                                                <option value="RJ">Rajasthan</option>
+                                                <option value="SM">Seemandhra</option>
+                                                <option value="SK">Sikkim</option>
+                                                <option value="TN">Tamilnadu</option>
+                                                <option value="TL">Telangana</option>
+                                                <option value="TR">Tripura</option>
+                                                <option value="UP">Uttar Pradesh</option>
+                                                <option value="UK">Uttrakhand</option>
+                                                <option value="WB">West Bengal</option>
+
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">District<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <select class="form-select select-box-w" id="displaydistrict"
+                                                name="district">
+                                                <option value="">Select District</option>
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Pin code<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+
+                                            <input class="form-control" value="" type="text" name="pincode"
+                                                id="displaypincode" minlength="6" maxlength="6" autocomplete="nope"
+                                                onkeypress="return isNumber(event)" value="" required>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Is the Applicant Below Poverty
+                                            Line ?<span class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+
+                                            <select name="bpl" class="form-select select-box-w" id="displaybpl"
+                                                onchange="show_hide('TR_BPL');">
+                                                <option value="Y">Yes</option>
+                                                <option value="N" selected="">No</option>
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">BPL Card No.<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" value="" name="bpl_cardno"
+                                                maxlength="50" id="displaybpl_cardno" disabled="true">
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Scanned copy of BPL Card <span
+                                                class="error">(only pdf,jpg & jpeg files having size up to 2 MB)</span>
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="file" name="upload" id="upload"
+                                                disabled="true">
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Security Question<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <select name="securityquestion" class="form-select" id="securityquestion">
+                                                <option value="">-- Select Question --</option>
+
+                                                <option value="What is your Mother's maiden name?">What is your Mother's
+                                                    maiden name?</option>
+                                                <option value="What is the name of your first School?">What is the name
+                                                    of your first School?</option>
+                                                <option value="What is the name of your favourite book?">What is the
+                                                    name of your favourite book?</option>
+                                                <option value="Which city were you born in?">Which city were you born
+                                                    in?</option>
+                                            </select>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Security Answer<span
+                                                class="error">*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" name="securityanswer"
+                                                id="securityanswer" maxlength="100" value="" required>
+                                            <span class="text-danger" id="result2">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Email ID <span
+                                                class="error">(to be used as USERNAME)*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="email" name="emailID" id="displayemailID"
+                                                style="text-transform: uppercase;" value="" required>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Mobile No. <span
+                                                class="error">(For receiving SMS alerts & for receiving activation
+                                                key)*</span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" name="mobileno" id="displaymobileno"
+                                                minlength="10" maxlength="10" onkeypress="return isNumber(event)"
+                                                value="" autocomplete="nope">
+                                            <span class="text-danger">
+                                            </span>
+                                            <div id="mobileno-error"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Enter the Validation code :
+                                            <span class="error">*</span>
+                                            <div id="cap" class="cpc-div">
+                                                <span class="captcha-code"
+                                                    id="captcha_preview_register_mobile_verify_captcha">181119</span>
+                                                <a href="javascript:refreshCaptcha('_register_mobile_verify_captcha');"
+                                                    id="reload-captcha">
+                                                    <img src="#" alt="">
+                                                </a>
+
+                                                <a href="javascript: playAudio('_register_mobile_verify_captcha');">
+                                                    <img src="#" alt="Play CAPTCHA Audio" style="border: 0px">
+                                                </a>
+                                            </div>
+
+                                            <audio id="myAudio_register_mobile_verify_captcha">
+                                                <source src="" type="audio/wav">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                            <input type="hidden" name="captcha_code_register_mobile_verify_captcha"
+                                                id="captcha_code_register_mobile_verify_captcha" value="181119">
+
+                                        </div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input type="text" name="captcha"
+                                                id="input_captcha_register_mobile_verify_captcha"
+                                                onkeyup="onKeyUpHandler(event,'_register_mobile_verify_captcha')"
+                                                class="form-control select-box-w">
+                                            <span class="" id="captcha_msg_register_mobile_verify_captcha">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">
+                                        </div>
+
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <p style="margin:10px 0; font-size:14px;">
+                                                Didn't receive the OTP? You can resend it after 2 minutes:
+                                                <span id="counterDown2Min">02:00 minuts</span>
+                                            </p>
+                                            <input type="button" class="quick-btn" value="Generate OTP" id="otpsend"
+                                                data-action="fresh-otp" style="width: auto;height: 45px;">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Please Enter OTP sent on your
+                                            mobile no for requestId <span id="requestID"></span></div>
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input class="form-control" type="text" name="otp" id="optEnter"
+                                                maxlength="6" onkeyup="onKeyUpOTPHandler(event,'_register_otp_verify')"
+                                                onkeypress="return isNumber(event)" disabled>
+                                            <span class="text-" id="otp_msg_register_otp_verify">
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-4 brd-right">Enter the Validation code :
+                                            <span class="error">*</span>
+                                            <div id="cap" class="cpc-div">
+                                                <span class="captcha-code"
+                                                    id="captcha_preview_register_form_captcha">249829</span>
+
+                                                <a href="javascript:refreshCaptcha('_register_form_captcha');"
+                                                    id="reload-captcha">
+                                                    <img src="#" alt="">
+                                                </a>
+
+                                                <a href="javascript: playAudio('_register_form_captcha');">
+                                                    <img src="#" alt="Play CAPTCHA Audio" style="border: 0px">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <audio id="myAudio_register_form_captcha">
+                                            <source src="" type="audio/wav">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                        <input type="hidden" name="captcha_code_register_form_captcha"
+                                            id="captcha_code_register_form_captcha" value="249829">
+
+                                        <div class="col-12 col-sm-12 col-md-8 brd-right2">
+                                            <input type="text" name="final_captcha"
+                                                id="input_captcha_register_form_captcha"
+                                                onkeyup="onKeyUpHandler(event,'_register_form_captcha')"
+                                                class="form-control select-box-w" disabled>
+                                            <span class="text-" id="captcha_msg_register_form_captcha">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-12 col-md-12">
+                                            <div class="submit_dis_line">
+                                                <input type="submit" value="Register"
+                                                    class="btn_submit quick-btn reg-btn" id="btnSubmit" disabled>
+                                                <p>if you have account <a href="#">Go to Login ?</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        
+        <!-- start footer  -->
+        <footer class="bg_footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="footer-content">
+                            <p>Copyright © 2026. Delhi High Court. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Edn footer  -->
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/jquery.min.js.download"></script>
+    <script type="text/javascript" src="./assets/js/jsvalidation.js"></script>
+    <!-- blockUI -->
+    <script src="./assets/js/jquery.blockUI.js"></script>
+    <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>

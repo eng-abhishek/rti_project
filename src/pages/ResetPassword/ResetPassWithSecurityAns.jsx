@@ -1,0 +1,86 @@
+import { Link } from "react-router-dom";
+
+function ResetPassWithSecurityAns(){
+return(<>
+    <section className="bg_spacing">
+      <div className="container">
+        <div className="bg_drop_shd-login">
+          <div className="row">
+            <div className="col-md-12 col-lg-12 cus_col_form ">
+              <div className="form_heading">
+                <h4>Reset Password using security question</h4>
+                <form className="input_cust" method="post"
+                  action="#"
+                  id="resetPassSecurity">
+                  <div className="form-group group col-md-12 col-12">
+                    <input type="text" name="email_id" value="" className="form-control cus-form-control" placeholder="" />
+                    <label className="form__label" htmlFor="">Username <span className="error">(email ID)</span></label>
+                  </div>
+
+                  <div className="form-group group col-md-12 col-12">
+                    <select name="security_question" className="form-select cus-form-control" id="securityquestion">
+                      <option value="">-- Select Question --</option>
+                      <option value="What is your Mother's maiden name?">What is your Mother's maiden name?</option>
+                      <option value="What is the name of your first School?">What is the name of your first School?
+                      </option>
+                      <option value="What is the name of your favourite book?">What is the name of your favourite book?
+                      </option>
+                      <option value="Which city were you born in?">Which city were you born in?</option>
+                    </select>
+                    <span className="text-danger">
+                    </span>
+                    <label className="form__label" htmlFor="">Security Question: </label>
+                  </div>
+
+                  <div className="form-group group col-md-12 col-12">
+                    <input type="text" name="security_answer" value="" className="form-control cus-form-control"
+                      placeholder="" />
+                    <label className="form__label" htmlFor="">Security Answer:</label>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-12 col-lg-5">
+                      <div className="form-group form_cust_flex">
+                        <label id="cap" className="captcha-label mr-4">
+                          <span id="captcha_preview_reset_pass_security_quest" className="captcha-code">196893</span>
+                        </label>
+                        <Link to="" id="reload-captcha">
+                          <img src="#" alt="" />
+                        </Link>
+                        <Link href="javascript: playAudio('_reset_pass_security_quest');">
+                          <img
+                            src="https://delhihighcourt.nic.in/app/rti/public/new_design/images/volume-high-solid.png"
+                            alt="" />
+                        </Link>
+                      </div>
+                      <audio id="myAudio_reset_pass_security_quest">
+                        <source src="" type="audio/wav" />
+                        Your browser does not support the audio element.
+                      </audio>
+                    </div>
+                    <div className="col-12 col-md-12 col-lg-6 offset-lg-1">
+                      <div className="form-group group col-md-12 col-12 enter_cap">
+                        <input type="text" className="form-control cus-form-control" name="input_captcha"
+                          id="input_captcha_reset_pass_security_quest"
+                          onkeyup="onKeyUpHandler(event,'_reset_pass_security_quest')" />
+                        <label className="form__label" htmlFor="">Enter Security Code:</label>
+                        <span id="captcha_msg_reset_pass_security_quest"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="">
+                    <button type="submit" name="btnSubmit" id="btnSubmit" className="btn_submit quick-btn">Submit</button>
+                  </div>
+                </form>
+                <div className="forgot_content d-flex justify-content-center">
+                  <p> <Link to="#">Go back to login page</Link></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      </>);
+}
+
+export default ResetPassWithSecurityAns;

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DHC RTI</title>
+  <link rel="stylesheet" href="./assets/css/bootstarp.min.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap-icons.woff">
+  <link rel="stylesheet" href="./assets/css/bootstrap-icons.woff2">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1326.0" data-gr-ext-installed="">
+  <div class="main">
+    <header class="header_bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="logo_content login_page_">
+              <a href="#"> <img src="./assets/logo/logo.png" alt=""></a>
+              <div class="logo-content">
+                <h4>High Court of Delhi</h4>
+                <h4>RTI System</h4>
+              </div>
+              <a href="#"> <img src="./assets/logo/Emblem_of_India.svg" alt="" class="emblem w-100"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <style>
+      .p-justify {
+        text-align: justify;
+      }
+    </style>
+
+    <!-- start main section  -->
+    <section class="bg_spacing">
+      <div class="container">
+        <div class="row bg_drop_shd">
+
+          <div class="col-md-6 p-0">
+            <div class="bg_upper_banner">
+              <img src="./assets/logo/history-img.jpg" alt="bg_image" class="w-100 h-100">
+              <div class="upper_banner-text">
+                <h4>RTI System</h4>
+                <p class="p-justify">
+                  This is a portal to file RTI applications/first appeals online along with payment gateway. Payment can
+                  be
+                  made through internet banking of SBI &amp; its associate banks, debit cards and BHIM UPI. Through this
+                  portal,
+                  RTI applications/first appeals can be filed by Indian Citizens for High Court of Delhi only. RTI
+                  applications/first appeals should not be filed for other Public authorities under Central/State Govt.
+                  through this portal. Please read instructions carefully while submitting request/appeal.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6 cus_col_form ">
+            <div class="form_heading">
+              <h4>Login</h4>
+              <form action="#" class="input_cust" method="post" id="loginForm" novalidate="novalidate">
+                
+                <div class="form-group group col-md-12 col-12">
+                  <input type="email" name="email_id" class="form-control cus-form-control" placeholder="">
+                  <label class="form__label" for="">Login ID</label>
+                  <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group group col-md-12 col-12 position-relative">
+                  <input type="password" name="password" id="password-input" class="form-control cus-form-control pe-5"
+                    placeholder="" fdprocessedid="rh3kd">
+
+                  <label class="form__label">Password</label>
+                  <i class="bi bi-eye position-absolute" id="togglePassword"
+                    style="right:15px; top:50%; transform:translateY(-50%); cursor:pointer;"></i>
+
+                  <span class="text-danger">
+                  </span>
+                </div>
+
+                <div class="row mt-2">
+                  <div class="col-12 col-md-12 col-lg-5">
+                    <div class="form-group form_cust_flex">
+                      <span class="captcha-code" id="captcha_preview">198877</span>
+                      <a href="javascript:refreshCaptcha(&#39;&#39;);" id="reload-captcha">
+                        <img src="./assets/logo/refresh.png" alt="">
+                      </a>
+                      <a href="javascript: playAudio(&#39;&#39;);">
+                        <img src="./assets/logo/volume-high-solid.png" alt="">
+                      </a>
+                    </div>
+                  </div>
+
+                  <audio id="myAudio">
+                    <source src="" type="audio/wav">
+                    Your browser does not support the audio element.
+                  </audio>
+                  <div class="col-12 col-md-12 col-lg-6 offset-lg-1">
+                    <div class="form-group group col-md-12 col-12 enter_cap">
+                      <input type="text" class="form-control cus-form-control" name="captcha" id="input_captcha"
+                        onkeyup="onKeyUpHandler(event,&#39;&#39;)" fdprocessedid="s1n0no">
+                      <label class="form__label" for="">Enter Captcha Code</label>
+                      <span id="captcha_msg"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="">
+                  <button type="submit" class="btn_submit quick-btn" id="btnSubmit"
+                    fdprocessedid="90baec">Submit</button>
+                </div>
+                
+                <input type="hidden" name="proengsoft_jsvalidation">
+              </form>
+              <div class="forgot_content">
+                <p>Not Registered Yet? <a href="#">Sign Up Here</a></p>
+                <p>Forget Password <a href="#">Click Here</a></p>
+              </div>
+              <div class="bottom_text">
+                <p>NOTE: FOR THE TIME BEING, FIRST APPEAL CANNOT BE FILED ONLINE IN CASE THE RTI APPLICATION HAS BEEN
+                  FILED
+                  PHYSICALLY.</p>
+                <a href="#" target="_blank">INSTRUCTIONS/USER MANUAL</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Edn main section  -->
+
+
+    <!-- start footer  -->
+    <footer class="bg_footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-content">
+              <p>Copyright © 2026. Delhi High Court. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Edn footer  -->
+  </div>
+
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/jquery.min.js.download"></script>
+  <script type="text/javascript" src="./assets/js/jsvalidation.js"></script>
+  <!-- blockUI -->
+  <script src="./assets/js/jquery.blockUI.js"></script>
+  <script src="./assets/js/custom.js"></script>
+</body>
+</html>

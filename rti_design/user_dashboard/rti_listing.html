@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DHC RTI</title>
+    <link rel="stylesheet" href="assets/css/bootstarp.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff">
+    <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff2">
+    <link href="assets/backend/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="assets/backend/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <main class="cd__main">
+        <header class="header_bg ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="parent_header">
+                            <div class="logo_dashbiar">
+                                <img src="assets/images/logo.png" alt="">
+                                <div class="logo-content">
+                                    <a href="#">
+                                        <h4>High Court of Delhi</h4>
+                                        <h4>RTI System</h4>
+                                    </a>
+                                </div>
+                                <a href="#!" class="menu-toggle custom_menu_toggle"><i class="bi bi-list"></i></a>
+                            </div>
+
+                            <div class="user_logIn-">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Welcome
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="Profiel_name">TEST</li>
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/images/user.png" alt="user" class="emblem">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <div class='dashboard'>
+
+            <!-- Sidebar -->
+            <div class="dashboard-nav sidebar">
+                <a href="#!" class="menu-toggle cust_mobile__close"><i class="bi bi-x-circle"></i></a>
+                <nav class="dashboard-nav-list">
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Inbox">
+                        <i class="bi bi-inbox"></i> Dashboard
+                    </a>
+                    <a href="#" class="dashboard-nav-item active" data-tooltip="Submit RTI Application">
+                        <i class="bi bi-person-add"></i> New RTI Request
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-inbox"></i> RTI Inbox
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-person-gear"></i> Edit Profile
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-gear"></i> Change Password
+                    </a>
+                    <a href="#" class="dashboard-nav-item" data-tooltip="Master Page">
+                        <i class="bi bi-box-arrow-right"></i>Logout
+                    </a>
+                </nav>
+            </div>
+
+            <div class='dashboard-app main-content bg_dashboard'>
+                <div class='container-fluid'>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form_heading custom_cenetr">
+                                <h4>RTI Inbox</h4>
+                            </div>
+                            <div class="bg_inner_div">
+                                <div class="table-responsive mt-4 custom_table_scroll">
+                                    <table
+                                        class="table table-bordered custom_table align-middle table-hover table-striped"
+                                        id="rti_tbl">
+                                        <thead>
+                                            <tr>
+                                                <th>S No</th>
+                                                <th>Diary No.</th>
+                                                <th>Reference No.</th>
+                                                <th>Appeal No.</th>
+                                                <th>Filing Date</th>
+                                                <th>Registration Date</th>
+                                                <th>RTI Reply Last Date</th>
+                                                <th>Action Required</th>
+                                                <th>Status</th>
+                                                <th>RTI Pay Status</th>
+                                                <th>Download RTI Application</th>
+                                                <th>Download RTI Reply</th>
+                                                <th>Filing Type</th>
+                                                <th>Comments</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr class="odd">
+                                                <td>1</td>
+                                                <td>NA</td>
+                                                <td class="sorting_1">110164/2026</td>
+                                                <td>NA</td>
+                                                <td>11-Jul-2026 06:57 PM</td>
+                                                <td>Will be Registered soon (in office hours)</td>
+                                                <td>Will be Registered soon (in office hours)</td>
+                                                <td><a href="#">Pay RTI Charges</a></td>
+                                                <td>Unregistered RTI</td>
+                                                <td>PENDING</td>
+                                                <td><a href="#" target="_blank" download=""><img
+                                                            src="assets/images/pdf_icon.gif"></a></td>
+                                                <td>No Attachment</td>
+                                                <td>RTI Application</td>
+                                                <td><a href="#"><img src="assets/images/log.bmp"></a></td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- start footer  -->
+    <footer class="bg_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-content">
+                        <p>Copyright © 2026. Delhi High Court. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Edn footer  -->
+    </div>
+</body>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+
+<!-- blockUI -->
+<script src="assets/js/jquery.blockUI.js"></script>
+<script src="assets/js/custom.js"></script>
+<script src="assets/backend/js/jquery.dataTables.min.js"></script>
+<script src="assets/backend/js/dataTables.bootstrap5.min.js"></script>
+
+</html>

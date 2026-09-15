@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DHC RTI</title>
+    <link rel="stylesheet" href="assets/css/bootstarp.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff">
+    <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff2">
+    <link href="assets/backend/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="assets/backend/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <main class="cd__main">
+        <header class="header_bg ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="parent_header">
+                            <div class="logo_dashbiar">
+                                <img src="assets/images/logo.png" alt="">
+                                <div class="logo-content">
+                                    <a href="#">
+                                        <h4>High Court of Delhi</h4>
+                                        <h4>RTI System</h4>
+                                    </a>
+                                </div>
+                                <a href="#!" class="menu-toggle custom_menu_toggle"><i class="bi bi-list"></i></a>
+                            </div>
+
+                            <div class="user_logIn-">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Welcome
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="Profiel_name">TEST</li>
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/images/user.png" alt="user" class="emblem">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Start DEMO HTML (Use the following code into your project)-->
+        <div class='dashboard'>
+            <div class="dashboard-nav sidebar">
+                <a href="#!" class="menu-toggle cust_mobile__close"><i class="bi bi-x-circle"></i></a>
+                <nav class="dashboard-nav-list">
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Inbox">
+                        <i class="bi bi-inbox"></i> Dashboard
+                    </a>
+                    <a href="#" class="dashboard-nav-item active" data-tooltip="Submit RTI Application">
+                        <i class="bi bi-person-add"></i> New RTI Request
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-inbox"></i> RTI Inbox
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-person-gear"></i> Edit Profile
+                    </a>
+                    <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                        <i class="bi bi-gear"></i> Change Password
+                    </a>
+                    <a href="#" class="dashboard-nav-item" data-tooltip="Master Page">
+                        <i class="bi bi-box-arrow-right"></i>Logout
+                    </a>
+                </nav>
+            </div>
+            <div class='dashboard-app main-content bg_dashboard'>
+
+                <div class='container-fluid'>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form_heading custom_cenetr">
+                                <h4>Apply RTI</h4>
+                            </div>
+                            <div class="bg_inner_div">
+                                <h4 class="section-title mt-3">New RTI Application Request Form</h4>
+                                <form action="#" method="post" enctype="multipart/form-data" class="input_cust"
+                                    id="validateForm">
+                                    <div class="row cust_flex_row_dash">
+                                        <div class="form-group group col-md-6 col-12">
+                                            <textarea name="rtimatter" id="rtimatter" maxlength="3000"
+                                                onkeyup="countChars('rtimatter','charcount');"
+                                                onkeydown="countChars('rtimatter','charcount');"
+                                                onmouseout="countChars('rtimatter','charcount');"
+                                                class="form-control cus-form-control h-100" rows="3"
+                                                value=""></textarea>
+                                            <span>(Max Limit 3000 Characters only)</span>
+                                            <!-- <input type="text" class="form-control cus-form-control" placeholder="" value=""> -->
+                                            <label class="form__label" for="">Text for RTI Request
+                                                application<span>*</span></label>
+                                            <span id="charcount">0</span> characters entered.
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+
+                                        <div class="form-group group col-md-6 col-12">
+                                            <div class="flex_gap">
+                                                <input type="file" name="upload" class="form-control"
+                                                    placeholder="Upload RTI File">
+
+                                            </div>
+                                            <span>Supporting document (only pdf upto 5 MB)</span>
+                                            <span class="text-danger">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="submit_dis_line">
+                                        <button type="submit" class="btn_submit quick-btn" id="submitid"
+                                            onclick="process('rtimatter');">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- start footer  -->
+    <footer class="bg_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-content">
+                        <p>Copyright © 2026. Delhi High Court. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Edn footer  -->
+    </div>
+</body>
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+
+<!-- blockUI -->
+<script src="assets/js/jquery.blockUI.js"></script>
+
+<script src="assets/js/custom.js"></script>
+<script src="assets/backend/js/jquery.dataTables.min.js"></script>
+<script src="assets/backend/js/dataTables.bootstrap5.min.js"></script>
+</html>

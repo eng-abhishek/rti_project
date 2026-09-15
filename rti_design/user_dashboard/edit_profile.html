@@ -1,0 +1,2205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DHC RTI</title>
+  
+  <link rel="stylesheet" href="assets/css/bootstarp.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff">
+  <link rel="stylesheet" href="assets/fonts/bootstrap-icons.woff2">
+  <link href="assets/backend/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link href="assets/backend/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+<main class="cd__main">
+
+ <header class="header_bg ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="parent_header">
+                            <div class="logo_dashbiar">
+                                <img src="assets/images/logo.png" alt="">
+                                <div class="logo-content">
+                                    <a href="#">
+                                        <h4>High Court of Delhi</h4>
+                                        <h4>RTI System</h4>
+                                    </a>
+                                </div>
+                                <a href="#!" class="menu-toggle custom_menu_toggle"><i class="bi bi-list"></i></a>
+                            </div>
+
+                            <div class="user_logIn-">
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Welcome
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="Profiel_name">TEST</li>
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/images/user.png" alt="user" class="emblem">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    <div class='dashboard'>
+    <!-- Sidebar -->
+    <div class="dashboard-nav sidebar">
+        <a href="#!" class="menu-toggle cust_mobile__close"><i class="bi bi-x-circle"></i></a>
+        <nav class="dashboard-nav-list">
+            <a href="#" class="dashboard-nav-item " data-tooltip="Inbox">
+                <i class="bi bi-inbox"></i> Dashboard
+            </a>
+            <a href="#" class="dashboard-nav-item active" data-tooltip="Submit RTI Application">
+                <i class="bi bi-person-add"></i> New RTI Request
+            </a>
+            <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                <i class="bi bi-inbox"></i> RTI Inbox
+            </a>
+            <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                <i class="bi bi-person-gear"></i> Edit Profile
+            </a>
+            <a href="#" class="dashboard-nav-item " data-tooltip="Master Page">
+                <i class="bi bi-gear"></i> Change Password
+            </a>
+            <a href="#" class="dashboard-nav-item" data-tooltip="Master Page">
+                <i class="bi bi-box-arrow-right"></i>Logout
+            </a>
+        </nav>
+    </div>  
+  
+  <div class='dashboard-app main-content bg_dashboard'>
+        <div class='container-fluid'>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form_heading custom_cenetr">
+                <h4>Edit Profile</h4>
+              </div>
+              <div class="bg_inner_div">
+
+
+
+                <form method="POST" action="https://delhihighcourt.nic.in/app/rti/profile" class="input_cust" id="validateForm"
+                  enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="sIdGZIsV7XQBB50YUL0HhFTEL6jttxkO7JcBIrOw">                  <div class="row cust_flex_row_dash">
+
+                    <div class="form-group group col-md-6 col-12">
+                      <textarea name="address" id="address" maxlength="300" class="form-control cus-form-control h-100"
+                        rows="3">Address Data</textarea>
+                      <span>(Max Limit 300 Characters only)</span>
+                      <!-- <input type="text" class="form-control cus-form-control" placeholder="" value=""> -->
+                      <label class="form__label" for="">User address<span>*</span></label>
+                      <span class="text-danger">
+                                              </span>
+                    </div>
+
+                    <div class="form-group group col-md-6 col-12">
+                      <select name="state" id="displaystate" class="form-control cus-form-control h-100" required="">
+                        <option value="">--Select State--</option>
+                                                  <option value="AN" >
+                            Andman &amp; Nicobar Islands
+                          </option>
+                                                  <option value="AR" >
+                            Arunanchal Pradesh
+                          </option>
+                                                  <option value="AS" >
+                            Assam
+                          </option>
+                                                  <option value="BR" >
+                            Bihar
+                          </option>
+                                                  <option value="CH" >
+                            Chandigarh
+                          </option>
+                                                  <option value="CG" >
+                            Chattisgarh
+                          </option>
+                                                  <option value="DN" >
+                            Dadra &amp; Nagar Haveli
+                          </option>
+                                                  <option value="DD" >
+                            Daman &amp; Diu
+                          </option>
+                                                  <option value="DL" >
+                            Delhi
+                          </option>
+                                                  <option value="GA" selected>
+                            GOA
+                          </option>
+                                                  <option value="GJ" >
+                            Gujrat
+                          </option>
+                                                  <option value="HR" >
+                            Haryana
+                          </option>
+                                                  <option value="HP" >
+                            Himachal Pradesh
+                          </option>
+                                                  <option value="JK" >
+                            Jammu &amp; Kashmir
+                          </option>
+                                                  <option value="JH" >
+                            Jharkhand
+                          </option>
+                                                  <option value="KA" >
+                            Karnataka
+                          </option>
+                                                  <option value="KL" >
+                            Kerala
+                          </option>
+                                                  <option value="LK" >
+                            Ladakh
+                          </option>
+                                                  <option value="LD" >
+                            Lakshdeep
+                          </option>
+                                                  <option value="MP" >
+                            Madhya Pradesh
+                          </option>
+                                                  <option value="MH" >
+                            Maharashtra
+                          </option>
+                                                  <option value="MN" >
+                            Manipur
+                          </option>
+                                                  <option value="ML" >
+                            Meghalaya
+                          </option>
+                                                  <option value="MZ" >
+                            Mizoram
+                          </option>
+                                                  <option value="NL" >
+                            Nagaland
+                          </option>
+                                                  <option value="OR" >
+                            Orissa
+                          </option>
+                                                  <option value="PY" >
+                            Pondicherry
+                          </option>
+                                                  <option value="PB" >
+                            Punjab
+                          </option>
+                                                  <option value="RJ" >
+                            Rajasthan
+                          </option>
+                                                  <option value="SM" >
+                            Seemandhra
+                          </option>
+                                                  <option value="SK" >
+                            Sikkim
+                          </option>
+                                                  <option value="TN" >
+                            Tamilnadu
+                          </option>
+                                                  <option value="TL" >
+                            Telangana
+                          </option>
+                                                  <option value="TR" >
+                            Tripura
+                          </option>
+                                                  <option value="UP" >
+                            Uttar Pradesh
+                          </option>
+                                                  <option value="UK" >
+                            Uttrakhand
+                          </option>
+                                                  <option value="WB" >
+                            West Bengal
+                          </option>
+                                              </select>
+                      <label class="form__label" for="">State<span>*</span></label>
+                      <span class="text-danger">
+                                              </span>
+                    </div>
+
+                    <div class="form-group group col-md-6 col-12">
+                      <select name="district" id="displaydistrict" class="form-control cus-form-control" required>
+                        <option value="">Select District</option>
+                                                  <option value="ADAP" >
+                            ADILABAD
+                          </option>
+                                                  <option value="AGUP" >
+                            AGRA
+                          </option>
+                                                  <option value="AHGJ" >
+                            AHMEDABAD
+                          </option>
+                                                  <option value="AHMH" >
+                            AHMEDNAGAR
+                          </option>
+                                                  <option value="AIMZ" >
+                            AIZAWL
+                          </option>
+                                                  <option value="AJRJ" >
+                            AJMER
+                          </option>
+                                                  <option value="AKMH" >
+                            AKOLA
+                          </option>
+                                                  <option value="ALKL" >
+                            ALAPPUZHA
+                          </option>
+                                                  <option value="ALUP" >
+                            ALIGARH
+                          </option>
+                                                  <option value="ALMP" >
+                            ALIRAJPUR
+                          </option>
+                                                  <option value="AHUP" >
+                            ALLAHABAD
+                          </option>
+                                                  <option value="ALUK" >
+                            ALMORA
+                          </option>
+                                                  <option value="ALRJ" >
+                            ALWAR
+                          </option>
+                                                  <option value="AMHR" >
+                            AMBALA
+                          </option>
+                                                  <option value="ANUP" >
+                            AMBEDKAR NAGAR
+                          </option>
+                                                  <option value="AMMH" >
+                            AMRAWATI
+                          </option>
+                                                  <option value="AMGJ" >
+                            AMRELI DISTRICT
+                          </option>
+                                                  <option value="AMPB" >
+                            AMRITSAR
+                          </option>
+                                                  <option value="ANGJ" >
+                            ANAND
+                          </option>
+                                                  <option value="SMAP" >
+                            Anantapur
+                          </option>
+                                                  <option value="ANAP" >
+                            ANANTAPUR
+                          </option>
+                                                  <option value="ANJK" >
+                            ANANTNAG
+                          </option>
+                                                  <option value="ANAN" >
+                            ANDMAN &amp; NICOBAR ISLANDS
+                          </option>
+                                                  <option value="ANOR" >
+                            ANGUL
+                          </option>
+                                                  <option value="AJAR" >
+                            ANJAW
+                          </option>
+                                                  <option value="APMP" >
+                            ANUPPUR
+                          </option>
+                                                  <option value="ARBR" >
+                            ARARIA
+                          </option>
+                                                  <option value="AYTN" >
+                            ARIYALUR
+                          </option>
+                                                  <option value="AWBR" >
+                            ARWAL
+                          </option>
+                                                  <option value="ASMP" >
+                            ASHOK NAGAR
+                          </option>
+                                                  <option value="AUUP" >
+                            AURAIYA
+                          </option>
+                                                  <option value="AUMH" >
+                            AURANGABAD
+                          </option>
+                                                  <option value="AUBR" >
+                            AURANGABAD
+                          </option>
+                                                  <option value="AZUP" >
+                            AZAMGARH
+                          </option>
+                                                  <option value="BDUP" >
+                            BADAUN
+                          </option>
+                                                  <option value="BDJK" >
+                            BADGAM
+                          </option>
+                                                  <option value="BKKA" >
+                            BAGALKOT
+                          </option>
+                                                  <option value="BAUK" >
+                            BAGESHWAR
+                          </option>
+                                                  <option value="BGUP" >
+                            BAGPAT
+                          </option>
+                                                  <option value="BHUP" >
+                            BAHRAICH
+                          </option>
+                                                  <option value="BLMP" >
+                            BALAGHAT
+                          </option>
+                                                  <option value="BWOR" >
+                            BALESWAR (BALASORE)
+                          </option>
+                                                  <option value="BLUP" >
+                            BALLIA
+                          </option>
+                                                  <option value="BPUP" >
+                            BALRAMPUR
+                          </option>
+                                                  <option value="BKGJ" >
+                            BANASKANTHA
+                          </option>
+                                                  <option value="BNUP" >
+                            BANDA
+                          </option>
+                                                  <option value="BPJK" >
+                            BANDIPORE
+                          </option>
+                                                  <option value="BRKA" >
+                            BANGALORE RURAL DISTRICT
+                          </option>
+                                                  <option value="BNKA" >
+                            BANGALORE URBAN DISTRICT
+                          </option>
+                                                  <option value="BABR" >
+                            BANKA
+                          </option>
+                                                  <option value="BNWB" >
+                            BANKURA
+                          </option>
+                                                  <option value="BNRJ" >
+                            BANSWARA
+                          </option>
+                                                  <option value="BBUP" >
+                            BARABANKI
+                          </option>
+                                                  <option value="BRJK" >
+                            BARAMULA
+                          </option>
+                                                  <option value="BRRJ" >
+                            BARAN
+                          </option>
+                                                  <option value="BRWB" >
+                            BARDHAMAN
+                          </option>
+                                                  <option value="BRUP" >
+                            BAREILLY
+                          </option>
+                                                  <option value="BROR" >
+                            BARGARH (BARAGARH)
+                          </option>
+                                                  <option value="BMRJ" >
+                            BARMER
+                          </option>
+                                                  <option value="BAAS" >
+                            BARPETA
+                          </option>
+                                                  <option value="BRMP" >
+                            BARWANI
+                          </option>
+                                                  <option value="BACG" >
+                            BASTAR
+                          </option>
+                                                  <option value="BSUP" >
+                            BASTI
+                          </option>
+                                                  <option value="BAPB" >
+                            BATHINDA
+                          </option>
+                                                  <option value="BIMH" >
+                            BEED
+                          </option>
+                                                  <option value="BEBR" >
+                            BEGUSARAI
+                          </option>
+                                                  <option value="BGKA" >
+                            BELGAUM
+                          </option>
+                                                  <option value="BLKA" >
+                            BELLARY
+                          </option>
+                                                  <option value="BEMP" >
+                            BETUL
+                          </option>
+                                                  <option value="BHOR" >
+                            BHADRAK
+                          </option>
+                                                  <option value="BGBR" >
+                            BHAGALPUR
+                          </option>
+                                                  <option value="BHMH" >
+                            BHANDARA
+                          </option>
+                                                  <option value="BPRJ" >
+                            BHARATPUR
+                          </option>
+                                                  <option value="BRGJ" >
+                            BHARUCH
+                          </option>
+                                                  <option value="BVGJ" >
+                            BHAVNAGAR
+                          </option>
+                                                  <option value="BWRJ" >
+                            BHILWARA
+                          </option>
+                                                  <option value="BDMP" >
+                            BHIND
+                          </option>
+                                                  <option value="BHHR" >
+                            BHIWANI
+                          </option>
+                                                  <option value="BJBR" >
+                            BHOJPUR
+                          </option>
+                                                  <option value="BPMP" >
+                            BHOPAL
+                          </option>
+                                                  <option value="BDKA" >
+                            BIDAR
+                          </option>
+                                                  <option value="BJKA" >
+                            BIJAPUR
+                          </option>
+                                                  <option value="BIUP" >
+                            BIJNOR
+                          </option>
+                                                  <option value="BIRJ" >
+                            BIKANER
+                          </option>
+                                                  <option value="BIHP" >
+                            BILASPUR
+                          </option>
+                                                  <option value="BICG" >
+                            BILASPUR
+                          </option>
+                                                  <option value="BIWB" >
+                            BIRBHUM
+                          </option>
+                                                  <option value="BIMN" >
+                            BISHNUPUR
+                          </option>
+                                                  <option value="BOJH" >
+                            BOKARO
+                          </option>
+                                                  <option value="BLOR" >
+                            BOLANGIR (BALANGIR)
+                          </option>
+                                                  <option value="BOAS" >
+                            BONGAIGAON
+                          </option>
+                                                  <option value="BDOR" >
+                            BOUDH (BAUDA)
+                          </option>
+                                                  <option value="BUUP" >
+                            BULANDSHAHR
+                          </option>
+                                                  <option value="BUMH" >
+                            BULDHANA
+                          </option>
+                                                  <option value="BURJ" >
+                            BUNDI
+                          </option>
+                                                  <option value="BUMP" >
+                            BURHANPUR
+                          </option>
+                                                  <option value="BUBR" >
+                            BUXAR
+                          </option>
+                                                  <option value="CAAS" >
+                            CACHAR
+                          </option>
+                                                  <option value="CJKA" >
+                            CHAMARAJNAGAR
+                          </option>
+                                                  <option value="CHHP" >
+                            CHAMBA
+                          </option>
+                                                  <option value="CLUK" >
+                            CHAMOLI
+                          </option>
+                                                  <option value="CPUK" >
+                            CHAMPAWAT
+                          </option>
+                                                  <option value="CHMZ" >
+                            CHAMPHAI
+                          </option>
+                                                  <option value="CDUP" >
+                            CHANDAULI
+                          </option>
+                                                  <option value="CDMN" >
+                            CHANDEL
+                          </option>
+                                                  <option value="CHCH" >
+                            CHANDIGARH
+                          </option>
+                                                  <option value="CHMH" >
+                            CHANDRAPUR
+                          </option>
+                                                  <option value="CHAR" >
+                            CHANGLANG
+                          </option>
+                                                  <option value="CHJH" >
+                            CHATRA
+                          </option>
+                                                  <option value="CHTN" >
+                            CHENNAI
+                          </option>
+                                                  <option value="CTMP" >
+                            CHHATARPUR
+                          </option>
+                                                  <option value="CNMP" >
+                            CHHINDWARA
+                          </option>
+                                                  <option value="CBKA" >
+                            CHIKBALLAPUR
+                          </option>
+                                                  <option value="CKKA" >
+                            CHIKMAGALUR
+                          </option>
+                                                  <option value="CTKA" >
+                            CHITRADURGA
+                          </option>
+                                                  <option value="CTUP" >
+                            CHITRAKOOT
+                          </option>
+                                                  <option value="SMCR" >
+                            Chittoor
+                          </option>
+                                                  <option value="CHAP" >
+                            CHITTOOR
+                          </option>
+                                                  <option value="CTRJ" >
+                            CHITTORGARH
+                          </option>
+                                                  <option value="CCMN" >
+                            CHURACHANDPUR
+                          </option>
+                                                  <option value="CRRJ" >
+                            CHURU
+                          </option>
+                                                  <option value="COTN" >
+                            COIMBATORE
+                          </option>
+                                                  <option value="KBWB" >
+                            COOCH BEHAR
+                          </option>
+                                                  <option value="CUTN" >
+                            CUDDALORE
+                          </option>
+                                                  <option value="CUOR" >
+                            CUTTACK
+                          </option>
+                                                  <option value="DNDN" >
+                            DADAR &amp; NAGAR HAVELI
+                          </option>
+                                                  <option value="DAGJ" >
+                            DAHOD
+                          </option>
+                                                  <option value="DKKA" >
+                            DAKSHINA KANNADA
+                          </option>
+                                                  <option value="DDWB" >
+                            DAKSHIN DINAJPUR
+                          </option>
+                                                  <option value="DDDD" >
+                            DAMAN &amp; DIU
+                          </option>
+                                                  <option value="DMMP" >
+                            DAMOH
+                          </option>
+                                                  <option value="DACG" >
+                            DANTEWADA
+                          </option>
+                                                  <option value="DABR" >
+                            DARBHANGA
+                          </option>
+                                                  <option value="DAWB" >
+                            DARJEELING
+                          </option>
+                                                  <option value="DAAS" >
+                            DARRANG
+                          </option>
+                                                  <option value="DTMP" >
+                            DATIA
+                          </option>
+                                                  <option value="DARJ" >
+                            DAUSA
+                          </option>
+                                                  <option value="DAKA" >
+                            DAVANAGERE
+                          </option>
+                                                  <option value="DEOR" >
+                            DEBAGARH (DEOGARH)
+                          </option>
+                                                  <option value="DDUK" >
+                            DEHRADUN
+                          </option>
+                                                  <option value="CDDL" >
+                            DELHI, CENTRAL DISTT.
+                          </option>
+                                                  <option value="EDDL" >
+                            DELHI, EAST DISTT.
+                          </option>
+                                                  <option value="NDDL" >
+                            DELHI, NEW DELHI DISTT.
+                          </option>
+                                                  <option value="NODL" >
+                            DELHI, NORTH DISTT.
+                          </option>
+                                                  <option value="NEDL" >
+                            DELHI, NORTH EAST DISTT.
+                          </option>
+                                                  <option value="NWDL" >
+                            DELHI, NORTH WEST DISTT.
+                          </option>
+                                                  <option value="SHDL" >
+                            DELHI, SHAHDRA DISTT.
+                          </option>
+                                                  <option value="SDDL" >
+                            DELHI, SOUTH DISTT.
+                          </option>
+                                                  <option value="SEDL" >
+                            DELHI, SOUTH EAST DISTT.
+                          </option>
+                                                  <option value="SWDL" >
+                            DELHI, SOUTH WEST DISTT.
+                          </option>
+                                                  <option value="WDDL" >
+                            DELHI, WEST DISTT.
+                          </option>
+                                                  <option value="DEJH" >
+                            DEOGHAR
+                          </option>
+                                                  <option value="DEUP" >
+                            DEORIA
+                          </option>
+                                                  <option value="DEMP" >
+                            DEWAS
+                          </option>
+                                                  <option value="DHTR" >
+                            DHALAI
+                          </option>
+                                                  <option value="DHCG" >
+                            DHAMTARI
+                          </option>
+                                                  <option value="DHJH" >
+                            DHANBAD
+                          </option>
+                                                  <option value="DHMP" >
+                            DHAR
+                          </option>
+                                                  <option value="DHTN" >
+                            DHARMAPURI
+                          </option>
+                                                  <option value="DHKA" >
+                            DHARWAD
+                          </option>
+                                                  <option value="DMAS" >
+                            DHEMAJI
+                          </option>
+                                                  <option value="DHOR" >
+                            DHENKANAL
+                          </option>
+                                                  <option value="DHRJ" >
+                            DHOLPUR
+                          </option>
+                                                  <option value="DBAS" >
+                            DHUBRI
+                          </option>
+                                                  <option value="DHMH" >
+                            DHULE
+                          </option>
+                                                  <option value="UDAR" >
+                            DIBANG VALLEY
+                          </option>
+                                                  <option value="DIAS" >
+                            DIBRUGARH
+                          </option>
+                                                  <option value="DINL" >
+                            DIMAPUR
+                          </option>
+                                                  <option value="DITN" >
+                            DINDIGUL
+                          </option>
+                                                  <option value="DIMP" >
+                            DINDORI
+                          </option>
+                                                  <option value="DOJK" >
+                            DODA
+                          </option>
+                                                  <option value="DUJH" >
+                            DUMKA
+                          </option>
+                                                  <option value="DURJ" >
+                            DUNGAPUR
+                          </option>
+                                                  <option value="DUCG" >
+                            DURG
+                          </option>
+                                                  <option value="ECBR" >
+                            EAST CHAMPARAN
+                          </option>
+                                                  <option value="EGML" >
+                            EAST GARO HILLS
+                          </option>
+                                                  <option value="SMEG" >
+                            East Godavari
+                          </option>
+                                                  <option value="EGAP" >
+                            EAST GODAVARI
+                          </option>
+                                                  <option value="EKAR" >
+                            EAST KAMENG
+                          </option>
+                                                  <option value="EKML" >
+                            EAST KHASI HILLS
+                          </option>
+                                                  <option value="ESSK" >
+                            EAST SIKKIM
+                          </option>
+                                                  <option value="ERKL" >
+                            ERNAKULAM
+                          </option>
+                                                  <option value="ERTN" >
+                            ERODE
+                          </option>
+                                                  <option value="ETUP" >
+                            ETAH
+                          </option>
+                                                  <option value="EWUP" >
+                            ETAWAH
+                          </option>
+                                                  <option value="FZUP" >
+                            FAIZABAD
+                          </option>
+                                                  <option value="FRHR" >
+                            FARIDABAD
+                          </option>
+                                                  <option value="FRPB" >
+                            FARIDKOT
+                          </option>
+                                                  <option value="FRUP" >
+                            FARRUKHABAD
+                          </option>
+                                                  <option value="FTHR" >
+                            FATEHABAD
+                          </option>
+                                                  <option value="FTPB" >
+                            FATEHGARH SAHIB
+                          </option>
+                                                  <option value="FTUP" >
+                            FATEHPUR
+                          </option>
+                                                  <option value="FIUP" >
+                            FIROZABAD
+                          </option>
+                                                  <option value="FIPB" >
+                            FIROZPUR
+                          </option>
+                                                  <option value="GAKA" >
+                            GADAG
+                          </option>
+                                                  <option value="GAMH" >
+                            GADCHIROLI
+                          </option>
+                                                  <option value="GPOR" >
+                            GAJAPATI
+                          </option>
+                                                  <option value="GAGJ" >
+                            GANDHINAGAR
+                          </option>
+                                                  <option value="GARJ" >
+                            GANGANAGAR
+                          </option>
+                                                  <option value="GNOR" >
+                            GANJAM
+                          </option>
+                                                  <option value="GAJH" >
+                            GARHWA
+                          </option>
+                                                  <option value="GBUP" >
+                            GAUTAM BUDDHA NAGAR
+                          </option>
+                                                  <option value="GABR" >
+                            GAYA
+                          </option>
+                                                  <option value="GZUP" >
+                            GHAZIABAD
+                          </option>
+                                                  <option value="GPUP" >
+                            GHAZIPUR
+                          </option>
+                                                  <option value="GIJH" >
+                            GIRIDIH
+                          </option>
+                                                  <option value="GPAS" >
+                            GOALPARA
+                          </option>
+                                                  <option value="GOJH" >
+                            GODDA
+                          </option>
+                                                  <option value="GGAS" >
+                            GOLAGHAT
+                          </option>
+                                                  <option value="GNUP" >
+                            GONDA
+                          </option>
+                                                  <option value="GOMH" >
+                            GONDIYA
+                          </option>
+                                                  <option value="GOBR" >
+                            GOPALGANJ
+                          </option>
+                                                  <option value="GRUP" >
+                            GORKAKHPUR
+                          </option>
+                                                  <option value="GUKA" >
+                            GULBARGA
+                          </option>
+                                                  <option value="GUJH" >
+                            GUMLA
+                          </option>
+                                                  <option value="GUMP" >
+                            GUNA
+                          </option>
+                                                  <option value="SMGR" >
+                            Guntur
+                          </option>
+                                                  <option value="GUAP" >
+                            GUNTUR
+                          </option>
+                                                  <option value="GUPB" >
+                            GURDASPUR
+                          </option>
+                                                  <option value="GUHR" >
+                            GURGAON
+                          </option>
+                                                  <option value="GWMP" >
+                            GWALIOR
+                          </option>
+                                                  <option value="HAAS" >
+                            HAILAKANDI
+                          </option>
+                                                  <option value="HAHP" >
+                            HAMIRPUR
+                          </option>
+                                                  <option value="HMUP" >
+                            HAMIRPUR
+                          </option>
+                                                  <option value="HARJ" >
+                            HANUMANGARH
+                          </option>
+                                                  <option value="HAMP" >
+                            HARDA
+                          </option>
+                                                  <option value="HRUP" >
+                            HARDOI
+                          </option>
+                                                  <option value="HAUK" >
+                            HARIDWAR
+                          </option>
+                                                  <option value="HSKA" >
+                            HASSAN
+                          </option>
+                                                  <option value="HVKA" >
+                            HAVERI DISTRICT
+                          </option>
+                                                  <option value="HAJH" >
+                            HAZARIBAGH
+                          </option>
+                                                  <option value="HIMH" >
+                            HINGOLI
+                          </option>
+                                                  <option value="HIHR" >
+                            HISSAR
+                          </option>
+                                                  <option value="HGWB" >
+                            HOOGHLY
+                          </option>
+                                                  <option value="HOMP" >
+                            HOSHANGABAD
+                          </option>
+                                                  <option value="HOPB" >
+                            HOSHIARPUR
+                          </option>
+                                                  <option value="HRWB" >
+                            HOWRAH
+                          </option>
+                                                  <option value="HYAP" >
+                            HYDERABAD
+                          </option>
+                                                  <option value="IDKL" >
+                            IDUKKI
+                          </option>
+                                                  <option value="EIMN" >
+                            IMPHAL EAST
+                          </option>
+                                                  <option value="WIMN" >
+                            IMPHAL WEST
+                          </option>
+                                                  <option value="INMP" >
+                            INDORE
+                          </option>
+                                                  <option value="JAMP" >
+                            JABALPUR
+                          </option>
+                                                  <option value="JSOR" >
+                            JAGATSINGHPUR
+                          </option>
+                                                  <option value="JHML" >
+                            JAINTIA HILLS
+                          </option>
+                                                  <option value="JPRJ" >
+                            JAIPUR
+                          </option>
+                                                  <option value="JSRJ" >
+                            JAISALMER
+                          </option>
+                                                  <option value="JPOR" >
+                            JAJAPUR (JAJPUR)
+                          </option>
+                                                  <option value="JAPB" >
+                            JALANDHAR
+                          </option>
+                                                  <option value="JLUP" >
+                            JALAUN
+                          </option>
+                                                  <option value="JGMH" >
+                            JALGAON
+                          </option>
+                                                  <option value="JNMH" >
+                            JALNA
+                          </option>
+                                                  <option value="JLRJ" >
+                            JALORE
+                          </option>
+                                                  <option value="JAWB" >
+                            JALPAIGURI
+                          </option>
+                                                  <option value="JAJK" >
+                            JAMMU
+                          </option>
+                                                  <option value="JAGJ" >
+                            JAMNAGAR
+                          </option>
+                                                  <option value="JABR" >
+                            JAMUI
+                          </option>
+                                                  <option value="JCCG" >
+                            JANJGIR-CHAMPA
+                          </option>
+                                                  <option value="JaCG" >
+                            JASHPUR
+                          </option>
+                                                  <option value="JUUP" >
+                            JAUNPUR DISTRICT
+                          </option>
+                                                  <option value="JEBR" >
+                            JEHANABAD
+                          </option>
+                                                  <option value="JHMP" >
+                            JHABUA
+                          </option>
+                                                  <option value="JHHR" >
+                            JHAJJAR
+                          </option>
+                                                  <option value="JWRJ" >
+                            JHALAWAR
+                          </option>
+                                                  <option value="JHUP" >
+                            JHANSI
+                          </option>
+                                                  <option value="JHOR" >
+                            JHARSUGUDA
+                          </option>
+                                                  <option value="JIHR" >
+                            JIND
+                          </option>
+                                                  <option value="JORJ" >
+                            JODHPUR
+                          </option>
+                                                  <option value="JOAS" >
+                            JORHAT
+                          </option>
+                                                  <option value="JJRJ" >
+                            JUHNJHUNUN
+                          </option>
+                                                  <option value="JUGJ" >
+                            JUNAGADH
+                          </option>
+                                                  <option value="JPUP" >
+                            JYOTIBA PHULE NAGAR
+                          </option>
+                                                  <option value="SMKD" >
+                            Kadapa
+                          </option>
+                                                  <option value="CUAP" >
+                            KADAPA
+                          </option>
+                                                  <option value="KMBR" >
+                            KAIMUR
+                          </option>
+                                                  <option value="KTHR" >
+                            KAITHAL
+                          </option>
+                                                  <option value="KLOR" >
+                            KALAHANDI
+                          </option>
+                                                  <option value="KCTN" >
+                            KANCHIPURAM
+                          </option>
+                                                  <option value="KNOR" >
+                            KANDHAMAL
+                          </option>
+                                                  <option value="KAHP" >
+                            KANGRA
+                          </option>
+                                                  <option value="KKCG" >
+                            KANKER
+                          </option>
+                                                  <option value="KJUP" >
+                            KANNAUJ
+                          </option>
+                                                  <option value="KNKL" >
+                            KANNUR
+                          </option>
+                                                  <option value="KDUP" >
+                            KANPUR DEHAT, RAMABAI NAGAR
+                          </option>
+                                                  <option value="KNUP" >
+                            KANPUR NAGAR
+                          </option>
+                                                  <option value="KRUP" >
+                            KANSHIRAM NAGAR
+                          </option>
+                                                  <option value="KKTN" >
+                            KANYAKUMARI
+                          </option>
+                                                  <option value="KAPB" >
+                            KAPURTHALA
+                          </option>
+                                                  <option value="KAPY" >
+                            KARAIKAL
+                          </option>
+                                                  <option value="KARJ" >
+                            KARAULI
+                          </option>
+                                                  <option value="KAAS" >
+                            KARBI ANGLONG
+                          </option>
+                                                  <option value="KARG" >
+                            Kargil
+                          </option>
+                                                  <option value="KRAS" >
+                            KARIMGANJ
+                          </option>
+                                                  <option value="KAAP" >
+                            KARIMNAGAR
+                          </option>
+                                                  <option value="KRHR" >
+                            KARNAL
+                          </option>
+                                                  <option value="KRTN" >
+                            KARUR
+                          </option>
+                                                  <option value="KSKL" >
+                            KASARAGOD
+                          </option>
+                                                  <option value="KTJK" >
+                            KATHUA
+                          </option>
+                                                  <option value="KTBR" >
+                            KATIHAR
+                          </option>
+                                                  <option value="KAMP" >
+                            KATNI
+                          </option>
+                                                  <option value="KSUP" >
+                            KAUSHAMBI
+                          </option>
+                                                  <option value="KWCG" >
+                            KAWARDHA
+                          </option>
+                                                  <option value="KPOR" >
+                            KENDRAPARA
+                          </option>
+                                                  <option value="KJOR" >
+                            KENDUJHAR (KEONJHAR)
+                          </option>
+                                                  <option value="KHBR" >
+                            KHAGARIA
+                          </option>
+                                                  <option value="KHAP" >
+                            KHAMMAM
+                          </option>
+                                                  <option value="ENMP" >
+                            KHANDWA (EAST NIMAR)
+                          </option>
+                                                  <option value="WNMP" >
+                            KHARGONE (WEST NIMAR)
+                          </option>
+                                                  <option value="KHGJ" >
+                            KHEDA
+                          </option>
+                                                  <option value="KHOR" >
+                            KHORDHA
+                          </option>
+                                                  <option value="KIHP" >
+                            KINNAUR
+                          </option>
+                                                  <option value="KIBR" >
+                            KISHANGANJ
+                          </option>
+                                                  <option value="KDKA" >
+                            KODAGU
+                          </option>
+                                                  <option value="KOJH" >
+                            KODERMA
+                          </option>
+                                                  <option value="KONL" >
+                            KOHIMA
+                          </option>
+                                                  <option value="KKAS" >
+                            KOKRAJHAR
+                          </option>
+                                                  <option value="KLKA" >
+                            KOLAR
+                          </option>
+                                                  <option value="KOMZ" >
+                            KOLASIB
+                          </option>
+                                                  <option value="KOMH" >
+                            KOLHAPUR
+                          </option>
+                                                  <option value="KOWB" >
+                            KOLKATA
+                          </option>
+                                                  <option value="KLKL" >
+                            KOLLAM
+                          </option>
+                                                  <option value="KPKA" >
+                            KOPPAL
+                          </option>
+                                                  <option value="KOOR" >
+                            KORAPUT
+                          </option>
+                                                  <option value="KBCG" >
+                            KORBA
+                          </option>
+                                                  <option value="KJCG" >
+                            KORIYA
+                          </option>
+                                                  <option value="KORJ" >
+                            KOTA
+                          </option>
+                                                  <option value="KTKL" >
+                            KOTTAYAM
+                          </option>
+                                                  <option value="KZKL" >
+                            KOZHIKODE
+                          </option>
+                                                  <option value="SMKN" >
+                            Krishna
+                          </option>
+                                                  <option value="KRAP" >
+                            KRISHNA
+                          </option>
+                                                  <option value="KUHP" >
+                            KULU
+                          </option>
+                                                  <option value="KUJK" >
+                            KUPWARA
+                          </option>
+                                                  <option value="SMKL" >
+                            Kurnool
+                          </option>
+                                                  <option value="KUAP" >
+                            KURNOOL
+                          </option>
+                                                  <option value="KUHR" >
+                            KURUKSHETRA
+                          </option>
+                                                  <option value="KUUP" >
+                            KUSHINAGAR
+                          </option>
+                                                  <option value="KAGJ" >
+                            KUTCH
+                          </option>
+                                                  <option value="LSHP" >
+                            LAHAUL AND SPITI
+                          </option>
+                                                  <option value="LAAS" >
+                            LAKHIMPUR
+                          </option>
+                                                  <option value="LKUP" >
+                            LAKHIMPUR KHERI
+                          </option>
+                                                  <option value="LABR" >
+                            LAKHISARAI
+                          </option>
+                                                  <option value="LDLD" >
+                            LAKSHDWEEP
+                          </option>
+                                                  <option value="LAUP" >
+                            LALITPUR
+                          </option>
+                                                  <option value="LAMH" >
+                            LATUR
+                          </option>
+                                                  <option value="LAMZ" >
+                            LAWNGTLAI
+                          </option>
+                                                  <option value="LEH" >
+                            Leh
+                          </option>
+                                                  <option value="LOJH" >
+                            LOHARDAGA
+                          </option>
+                                                  <option value="ELAR" >
+                            LOHIT
+                          </option>
+                                                  <option value="LBAR" >
+                            LOWER SUBANSIRI
+                          </option>
+                                                  <option value="LUUP" >
+                            LUCKNOW
+                          </option>
+                                                  <option value="LUPB" >
+                            LUDHIANA
+                          </option>
+                                                  <option value="LUMZ" >
+                            LUNGLEI
+                          </option>
+                                                  <option value="MPBR" >
+                            MADHEPURA
+                          </option>
+                                                  <option value="MBBR" >
+                            MADHUBANI
+                          </option>
+                                                  <option value="MATN" >
+                            MADURAI
+                          </option>
+                                                  <option value="MAAP" >
+                            MAHABUBNAGAR
+                          </option>
+                                                  <option value="HTUP" >
+                            MAHAMAYA NAGAR
+                          </option>
+                                                  <option value="MGUP" >
+                            MAHARAJGANJ
+                          </option>
+                                                  <option value="MACG" >
+                            MAHASAMUND
+                          </option>
+                                                  <option value="MAPY" >
+                            MAHE
+                          </option>
+                                                  <option value="MAHR" >
+                            MAHENDRAGARH
+                          </option>
+                                                  <option value="MHUP" >
+                            MAHOBA
+                          </option>
+                                                  <option value="MPUP" >
+                            MAINPURI
+                          </option>
+                                                  <option value="MAKL" >
+                            MALAPPURAM
+                          </option>
+                                                  <option value="MAWB" >
+                            MALDA
+                          </option>
+                                                  <option value="MLOR" >
+                            MALKANGIRI
+                          </option>
+                                                  <option value="MAMZ" >
+                            MAMIT
+                          </option>
+                                                  <option value="MAHP" >
+                            MANDI
+                          </option>
+                                                  <option value="MLMP" >
+                            MANDLA
+                          </option>
+                                                  <option value="MSMP" >
+                            MANDSAUR
+                          </option>
+                                                  <option value="MAKA" >
+                            MANDYA
+                          </option>
+                                                  <option value="MAPB" >
+                            MANSA
+                          </option>
+                                                  <option value="MAAS" >
+                            MARIGAON
+                          </option>
+                                                  <option value="MTUP" >
+                            MATHURA
+                          </option>
+                                                  <option value="MBUP" >
+                            MAU
+                          </option>
+                                                  <option value="MYOR" >
+                            MAYURBHANJ
+                          </option>
+                                                  <option value="MEAP" >
+                            MEDAK
+                          </option>
+                                                  <option value="MEUP" >
+                            MEERUT
+                          </option>
+                                                  <option value="MAGJ" >
+                            MEHSANA
+                          </option>
+                                                  <option value="MWHR" >
+                            MEWAT
+                          </option>
+                                                  <option value="MEWB" >
+                            MIDNAPORE
+                          </option>
+                                                  <option value="MIUP" >
+                            MIRZAPUR
+                          </option>
+                                                  <option value="MOPB" >
+                            MOGA
+                          </option>
+                                                  <option value="MKNL" >
+                            MOKOKCHUNG
+                          </option>
+                                                  <option value="MNNL" >
+                            MON
+                          </option>
+                                                  <option value="MOUP" >
+                            MORADABAD
+                          </option>
+                                                  <option value="MOMP" >
+                            MORENA
+                          </option>
+                                                  <option value="MUPB" >
+                            MUKATSAR
+                          </option>
+                                                  <option value="MCMH" >
+                            MUMBAI CITY
+                          </option>
+                                                  <option value="MUMH" >
+                            MUMBAI SUBURBAN
+                          </option>
+                                                  <option value="MGBR" >
+                            MUNGER
+                          </option>
+                                                  <option value="MUWB" >
+                            MURSHIDABAD
+                          </option>
+                                                  <option value="MUUP" >
+                            MUZAFFARNAGAR
+                          </option>
+                                                  <option value="MZBR" >
+                            MUZAFFARPUR
+                          </option>
+                                                  <option value="MYKA" >
+                            MYSORE
+                          </option>
+                                                  <option value="NBOR" >
+                            NABARANGPUR
+                          </option>
+                                                  <option value="NAWB" >
+                            NADIA
+                          </option>
+                                                  <option value="NGAS" >
+                            NAGAON
+                          </option>
+                                                  <option value="NGTN" >
+                            NAGAPATTINAM
+                          </option>
+                                                  <option value="NARJ" >
+                            NAGAUR
+                          </option>
+                                                  <option value="NGMH" >
+                            NAGPUR
+                          </option>
+                                                  <option value="NAUK" >
+                            NAINITAL
+                          </option>
+                                                  <option value="NLBR" >
+                            NALANDA
+                          </option>
+                                                  <option value="NLAS" >
+                            NALBARI
+                          </option>
+                                                  <option value="NAAP" >
+                            NALGONDA
+                          </option>
+                                                  <option value="NMTN" >
+                            NAMAKKAL
+                          </option>
+                                                  <option value="NDMH" >
+                            NANDED
+                          </option>
+                                                  <option value="NBMH" >
+                            NANDURBAR
+                          </option>
+                                                  <option value="NRGJ" >
+                            NARMADA
+                          </option>
+                                                  <option value="NAMP" >
+                            NARSINGHPUR
+                          </option>
+                                                  <option value="NSMH" >
+                            NASHIK
+                          </option>
+                                                  <option value="NVGJ" >
+                            NAVSARI
+                          </option>
+                                                  <option value="NWBR" >
+                            NAWADA
+                          </option>
+                                                  <option value="NSPB" >
+                            NAWAN SHEHAR
+                          </option>
+                                                  <option value="NYOR" >
+                            NAYAGARH
+                          </option>
+                                                  <option value="NEMP" >
+                            NEEMUCH
+                          </option>
+                                                  <option value="NEAP" >
+                            NELLORE
+                          </option>
+                                                  <option value="NIAP" >
+                            NIZAMABAD
+                          </option>
+                                                  <option value="PNWB" >
+                            NORTH 24 PARGANAS
+                          </option>
+                                                  <option value="NCAS" >
+                            NORTH CACHAR HILLS
+                          </option>
+                                                  <option value="NGGA" selected>
+                            NORTH GOA
+                          </option>
+                                                  <option value="NSSK" >
+                            NORTH SIKKIM
+                          </option>
+                                                  <option value="NTTR" >
+                            NORTH TRIPURA
+                          </option>
+                                                  <option value="NUOR" >
+                            NUAPADA
+                          </option>
+                                                  <option value="OSMH" >
+                            OSMANABAD
+                          </option>
+                                                  <option value="PKJH" >
+                            PAKUR
+                          </option>
+                                                  <option value="PLKL" >
+                            PALAKKAD
+                          </option>
+                                                  <option value="PLJH" >
+                            PALAMU
+                          </option>
+                                                  <option value="PARJ" >
+                            PALI
+                          </option>
+                                                  <option value="PWHR" >
+                            PALWAL
+                          </option>
+                                                  <option value="PKHR" >
+                            PANCHKULA
+                          </option>
+                                                  <option value="PMGJ" >
+                            PANCHMAHAL
+                          </option>
+                                                  <option value="PPHR" >
+                            PANIPAT
+                          </option>
+                                                  <option value="PAMP" >
+                            PANNA
+                          </option>
+                                                  <option value="PAAR" >
+                            PAPUM PARE
+                          </option>
+                                                  <option value="PAMH" >
+                            PARBHANI
+                          </option>
+                                                  <option value="WSJH" >
+                            PASHCHIM SINGHBHUM
+                          </option>
+                                                  <option value="PAGJ" >
+                            PATAN
+                          </option>
+                                                  <option value="PTKL" >
+                            PATHANAMTHITTA
+                          </option>
+                                                  <option value="PAPB" >
+                            PATIALA
+                          </option>
+                                                  <option value="PABR" >
+                            PATNA
+                          </option>
+                                                  <option value="PGUK" >
+                            PAURI GARHWAL
+                          </option>
+                                                  <option value="PETN" >
+                            PERAMBALUR
+                          </option>
+                                                  <option value="PHNL" >
+                            PHEK
+                          </option>
+                                                  <option value="PIUP" >
+                            PILIBHIT
+                          </option>
+                                                  <option value="PIUK" >
+                            PITHORAGHARH
+                          </option>
+                                                  <option value="PYPY" >
+                            PONDICHERRY
+                          </option>
+                                                  <option value="POJK" >
+                            POONCH
+                          </option>
+                                                  <option value="POGJ" >
+                            PORBANDAR
+                          </option>
+                                                  <option value="SMPM" >
+                            Prakasam
+                          </option>
+                                                  <option value="PRAP" >
+                            PRAKASAM
+                          </option>
+                                                  <option value="PRUP" >
+                            PRATAPGARH
+                          </option>
+                                                  <option value="PGRJ" >
+                            PRATAPGARH
+                          </option>
+                                                  <option value="POPY" >
+                            PUDUCHERRY
+                          </option>
+                                                  <option value="PUTN" >
+                            PUDUKKOTTAI
+                          </option>
+                                                  <option value="PUJK" >
+                            PULWAMA
+                          </option>
+                                                  <option value="PUMH" >
+                            PUNE
+                          </option>
+                                                  <option value="ESJH" >
+                            PURBA SINGHBHUM
+                          </option>
+                                                  <option value="PUOR" >
+                            PURI
+                          </option>
+                                                  <option value="PUBR" >
+                            PURNIA
+                          </option>
+                                                  <option value="PUWB" >
+                            PURULIA
+                          </option>
+                                                  <option value="RBUP" >
+                            RAE BARELI
+                          </option>
+                                                  <option value="RAKA" >
+                            RAICHUR
+                          </option>
+                                                  <option value="RGMH" >
+                            RAIGAD
+                          </option>
+                                                  <option value="RGCG" >
+                            RAIGARH
+                          </option>
+                                                  <option value="RPCG" >
+                            RAIPUR
+                          </option>
+                                                  <option value="RSMP" >
+                            RAISEN
+                          </option>
+                                                  <option value="RAJK" >
+                            RAJAURI
+                          </option>
+                                                  <option value="RGMP" >
+                            RAJGARH
+                          </option>
+                                                  <option value="RAGJ" >
+                            RAJKOT
+                          </option>
+                                                  <option value="RNCG" >
+                            RAJNANDGAON
+                          </option>
+                                                  <option value="RARJ" >
+                            RAJSAMAND
+                          </option>
+                                                  <option value="RMKA" >
+                            RAMANAGARA
+                          </option>
+                                                  <option value="RATN" >
+                            RAMANATHAPURAM
+                          </option>
+                                                  <option value="RMJH" >
+                            RAMGARH
+                          </option>
+                                                  <option value="RAUP" >
+                            RAMPUR
+                          </option>
+                                                  <option value="RAJH" >
+                            RANCHI
+                          </option>
+                                                  <option value="RAAP" >
+                            RANGAREDDI
+                          </option>
+                                                  <option value="RLMP" >
+                            RATLAM
+                          </option>
+                                                  <option value="RTMH" >
+                            RATNAGIRI
+                          </option>
+                                                  <option value="RAOR" >
+                            RAYAGADA
+                          </option>
+                                                  <option value="REMP" >
+                            REWA
+                          </option>
+                                                  <option value="REHR" >
+                            REWARI
+                          </option>
+                                                  <option value="RBML" >
+                            RI-BHOI
+                          </option>
+                                                  <option value="ROHR" >
+                            ROHTAK
+                          </option>
+                                                  <option value="ROBR" >
+                            ROHTAS
+                          </option>
+                                                  <option value="RPUK" >
+                            RUDRAPRAYAG
+                          </option>
+                                                  <option value="RUPB" >
+                            RUPNAGAR
+                          </option>
+                                                  <option value="SKGJ" >
+                            SABARKANTHA
+                          </option>
+                                                  <option value="SGMP" >
+                            SAGAR
+                          </option>
+                                                  <option value="SAUP" >
+                            SAHARANPUR
+                          </option>
+                                                  <option value="SHBR" >
+                            SAHARSA
+                          </option>
+                                                  <option value="SAJH" >
+                            SAHIBGANJ
+                          </option>
+                                                  <option value="SAMZ" >
+                            SAIHA
+                          </option>
+                                                  <option value="SATN" >
+                            SALEM
+                          </option>
+                                                  <option value="SMBR" >
+                            SAMASTIPUR
+                          </option>
+                                                  <option value="SMJK" >
+                            SAMBA
+                          </option>
+                                                  <option value="SAOR" >
+                            SAMBALPUR
+                          </option>
+                                                  <option value="SNMH" >
+                            SANGLI
+                          </option>
+                                                  <option value="SAPB" >
+                            SANGRUR
+                          </option>
+                                                  <option value="SKUP" >
+                            SANT KABIR NAGAR
+                          </option>
+                                                  <option value="SRUP" >
+                            SANT RAVIDAS NAGAR
+                          </option>
+                                                  <option value="SRBR" >
+                            SARAN
+                          </option>
+                                                  <option value="STMH" >
+                            SATARA
+                          </option>
+                                                  <option value="STMP" >
+                            SATNA
+                          </option>
+                                                  <option value="SMRJ" >
+                            SAWAI MADHOPUR
+                          </option>
+                                                  <option value="SRMP" >
+                            SEHORE
+                          </option>
+                                                  <option value="SEMN" >
+                            SENAPATI
+                          </option>
+                                                  <option value="SOMP" >
+                            SEONI
+                          </option>
+                                                  <option value="SKJH" >
+                            SERAIKELA &amp; KHARSAWAN
+                          </option>
+                                                  <option value="SEMZ" >
+                            SERCHHIP
+                          </option>
+                                                  <option value="SHMP" >
+                            SHAHDOL
+                          </option>
+                                                  <option value="SJUP" >
+                            SHAHJAHANPUR
+                          </option>
+                                                  <option value="SJMP" >
+                            SHAJAPUR
+                          </option>
+                                                  <option value="SPBR" >
+                            SHEIKHPURA
+                          </option>
+                                                  <option value="SOBR" >
+                            SHEOHAR
+                          </option>
+                                                  <option value="SPMP" >
+                            SHEOPUR
+                          </option>
+                                                  <option value="SHHP" >
+                            SHIMLA
+                          </option>
+                                                  <option value="SHKA" >
+                            SHIMOGA
+                          </option>
+                                                  <option value="SVMP" >
+                            SHIVPURI
+                          </option>
+                                                  <option value="SVUP" >
+                            SHRAVASTI
+                          </option>
+                                                  <option value="SIAS" >
+                            SIBSAGAR
+                          </option>
+                                                  <option value="SNUP" >
+                            SIDDHARTHNAGAR
+                          </option>
+                                                  <option value="SIMP" >
+                            SIDHI
+                          </option>
+                                                  <option value="SKRJ" >
+                            SIKAR
+                          </option>
+                                                  <option value="SIMH" >
+                            SINDHUDURG
+                          </option>
+                                                  <option value="SNMP" >
+                            SINGRAULI
+                          </option>
+                                                  <option value="SIHP" >
+                            SIRMAUR
+                          </option>
+                                                  <option value="SRRJ" >
+                            SIROHI
+                          </option>
+                                                  <option value="SIHR" >
+                            SIRSA
+                          </option>
+                                                  <option value="STBR" >
+                            SITAMARHI
+                          </option>
+                                                  <option value="SIUP" >
+                            SITAPUR
+                          </option>
+                                                  <option value="SITN" >
+                            SIVAGANGAI
+                          </option>
+                                                  <option value="SWBR" >
+                            SIWAN
+                          </option>
+                                                  <option value="SOHP" >
+                            SOLAN
+                          </option>
+                                                  <option value="SOMH" >
+                            SOLAPUR
+                          </option>
+                                                  <option value="SOUP" >
+                            SONBHADRA
+                          </option>
+                                                  <option value="SPHR" >
+                            SONEPAT
+                          </option>
+                                                  <option value="SOAS" >
+                            SONITPUR
+                          </option>
+                                                  <option value="PSWB" >
+                            SOUTH 24 PARGANAS
+                          </option>
+                                                  <option value="SGML" >
+                            SOUTH GARO HILLS
+                          </option>
+                                                  <option value="SGGA" >
+                            SOUTH GOA
+                          </option>
+                                                  <option value="SSSK" >
+                            SOUTH SIKKIM
+                          </option>
+                                                  <option value="STTR" >
+                            SOUTH TRIPURA
+                          </option>
+                                                  <option value="SMSM" >
+                            Srikakulam
+                          </option>
+                                                  <option value="SRAP" >
+                            SRIKAKULAM
+                          </option>
+                                                  <option value="SRJK" >
+                            SRINAGAR
+                          </option>
+                                                  <option value="SMNO" >
+                            Sri Potti Sri Ramulu Nellore
+                          </option>
+                                                  <option value="SOOR" >
+                            SUBARNAPUR (SONEPUR)
+                          </option>
+                                                  <option value="SUUP" >
+                            SULTANPUR
+                          </option>
+                                                  <option value="SUOR" >
+                            SUNDARGARH (SUNDERGARH)
+                          </option>
+                                                  <option value="SUBR" >
+                            SUPAUL
+                          </option>
+                                                  <option value="STGJ" >
+                            SURAT
+                          </option>
+                                                  <option value="SNGJ" >
+                            SURENDRANAGAR
+                          </option>
+                                                  <option value="SUCG" >
+                            SURGUJA
+                          </option>
+                                                  <option value="TAMN" >
+                            TAMENGLONG
+                          </option>
+                                                  <option value="TGUK" >
+                            TEHRI GARHWAL
+                          </option>
+                                                  <option value="THMH" >
+                            THANE
+                          </option>
+                                                  <option value="TJTN" >
+                            THANJAVUR
+                          </option>
+                                                  <option value="DGGJ" >
+                            THE DANGS
+                          </option>
+                                                  <option value="THTN" >
+                            THENI
+                          </option>
+                                                  <option value="NITN" >
+                            THE NILGIRIS
+                          </option>
+                                                  <option value="TLTN" >
+                            THIRUVALLUR
+                          </option>
+                                                  <option value="TVKL" >
+                            THIRUVANANTHAPURAM
+                          </option>
+                                                  <option value="TRTN" >
+                            THIRUVARUR
+                          </option>
+                                                  <option value="TKTN" >
+                            THOOTHUKUDI
+                          </option>
+                                                  <option value="THMN" >
+                            THOUBAL
+                          </option>
+                                                  <option value="TSKL" >
+                            THRISSUR
+                          </option>
+                                                  <option value="TIMP" >
+                            TIKAMGARH
+                          </option>
+                                                  <option value="TIAS" >
+                            TINSUKIA
+                          </option>
+                                                  <option value="TIAR" >
+                            TIRAP
+                          </option>
+                                                  <option value="TCTN" >
+                            TIRUCHIRAPPALLI
+                          </option>
+                                                  <option value="TITN" >
+                            TIRUNELVELI
+                          </option>
+                                                  <option value="TPTN" >
+                            TIRUPPUR
+                          </option>
+                                                  <option value="TVTN" >
+                            TIRUVANNAMALAI
+                          </option>
+                                                  <option value="TORJ" >
+                            TONK
+                          </option>
+                                                  <option value="TUNL" >
+                            TUENSANG
+                          </option>
+                                                  <option value="TUKA" >
+                            TUMKUR
+                          </option>
+                                                  <option value="UDRJ" >
+                            UDAIPUR
+                          </option>
+                                                  <option value="UDJK" >
+                            UDHAMPUR
+                          </option>
+                                                  <option value="USUK" >
+                            UDHAM SINGH NAGAR
+                          </option>
+                                                  <option value="UDKA" >
+                            UDUPI
+                          </option>
+                                                  <option value="UJMP" >
+                            UJJAIN
+                          </option>
+                                                  <option value="UKMN" >
+                            UKHRUL
+                          </option>
+                                                  <option value="UMMP" >
+                            UMARIA
+                          </option>
+                                                  <option value="UNHP" >
+                            UNA
+                          </option>
+                                                  <option value="UNUP" >
+                            UNNAO
+                          </option>
+                                                  <option value="UBAR" >
+                            UPPER SUBANSIRI
+                          </option>
+                                                  <option value="UKKA" >
+                            UTTARA KANNADA
+                          </option>
+                                                  <option value="UDWB" >
+                            UTTAR DINAJPUR
+                          </option>
+                                                  <option value="UTUK" >
+                            UTTARKASHI
+                          </option>
+                                                  <option value="VDGJ" >
+                            VADODARA
+                          </option>
+                                                  <option value="VABR" >
+                            VAISHALI
+                          </option>
+                                                  <option value="VLGJ" >
+                            VALSAD
+                          </option>
+                                                  <option value="VAUP" >
+                            VARANASI
+                          </option>
+                                                  <option value="VETN" >
+                            VELLORE
+                          </option>
+                                                  <option value="VIMP" >
+                            VIDISHA
+                          </option>
+                                                  <option value="VLTN" >
+                            VILLUPURAM
+                          </option>
+                                                  <option value="SMVP" >
+                            Visakhapatnam
+                          </option>
+                                                  <option value="VSAP" >
+                            VISHAKHAPATNAM
+                          </option>
+                                                  <option value="SMVM" >
+                            Vizianagaram
+                          </option>
+                                                  <option value="VZAP" >
+                            VIZIANAGARAM
+                          </option>
+                                                  <option value="WAAP" >
+                            WARANGAL
+                          </option>
+                                                  <option value="WRMH" >
+                            WARDHA
+                          </option>
+                                                  <option value="WSMH" >
+                            WASHIM
+                          </option>
+                                                  <option value="WAKL" >
+                            WAYANAD
+                          </option>
+                                                  <option value="WCBR" >
+                            WEST CHAMPARAN
+                          </option>
+                                                  <option value="WGML" >
+                            WEST GARO HILLS
+                          </option>
+                                                  <option value="SMWG" >
+                            West Godavari
+                          </option>
+                                                  <option value="WGAP" >
+                            WEST GODAVARI
+                          </option>
+                                                  <option value="WKAR" >
+                            WEST KAMENG
+                          </option>
+                                                  <option value="WKML" >
+                            WEST KHASI HILLS
+                          </option>
+                                                  <option value="WSSK" >
+                            WEST SIKKIM
+                          </option>
+                                                  <option value="WTTR" >
+                            WEST TRIPURA
+                          </option>
+                                                  <option value="WONL" >
+                            WOKHA
+                          </option>
+                                                  <option value="YGKA" >
+                            YADAGIRI
+                          </option>
+                                                  <option value="YNHR" >
+                            YAMUNA NAGAR
+                          </option>
+                                                  <option value="YAPY" >
+                            YANAM
+                          </option>
+                                                  <option value="YAMH" >
+                            YAVATMAL
+                          </option>
+                                                  <option value="ZUNL" >
+                            ZUNHEBOTO
+                          </option>
+                                              </select>
+                      <label class="form__label" for="">District<span>*</span></label>
+                      <span class="text-danger">
+                                              </span>
+                    </div>
+
+                    <div class="form-group group col-md-6 col-12">
+                      <input class="form-control cus-form-control" type="text" name="pincode" id="displaypincode"
+                        minlength="6" maxlength="6" onkeypress="return isNumber(event)"
+                        value="272127">
+                      <!-- <input type="text" class="form-control cus-form-control" placeholder="" value=""> -->
+                      <label class="form__label" for="">Pin code<span>*</span></label>
+                      <span class="text-danger">
+                                              </span>
+                    </div>
+
+                    <div class="form-group group col-md-6 col-12">
+                      <input class="form-control cus-form-control" type="text" name="mobileno" id="displaymobileno"
+                        minlength="10" maxlength="10" onkeypress="return isNumber(event)"
+                        value="7071310320">
+                      <label class="form__label" for="">Mobile No<span>*</span></label>
+                      <span class="text-danger">
+                                              </span>
+                    </div>
+
+                    <div class="form-group group col-md-6 col-12">
+                      <input class="form-control cus-form-control" disabled type="text" value="TEST2026@GMAIL.COM">
+                      <label class="form__label" for="">Email ID</label>
+                    </div>
+
+                    
+                  </div>
+              </div>
+              <!-- <div class="submit_dis_line">
+            <button class="au-btn au-btn--block au-btn--green m-b-20" id="submitid" onclick="process('rtimatter');">Submit</button>
+            </div> -->
+              <div class="submit_dis_line">
+                <button type="submit" id="submitid" class="btn_submit quick-btn">Update</button>
+                
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-labelledby="otpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="otpModalLabel">Verify Mobile No</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <p class="modal-title text-center pt-1" id="otpText"></p>
+          <p class="modal-title text-center text-danger pt-1" id="otpTimer"></p>
+          <div class="modal-body">
+
+            <form id="verify-otp-form">
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Enter Mobile OTP:</label>
+                <input type="number" class="form-control" id="mobile_otp" name="mobile_otp">
+              </div>
+            </form>
+
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- start footer  -->
+<footer class="bg_footer">
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <div class="footer-content">
+      <p>Copyright © 2026. Delhi High Court. All Rights Reserved.</p>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+<!-- Edn footer  -->
+</div>
+</body>
+
+
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+
+  <!-- blockUI -->
+	<script src="assets/js/jquery.blockUI.js"></script>
+
+<script src="assets/js/custom.js"></script>
+<script src="assets/backend/js/jquery.dataTables.min.js"></script>
+<script src="assets/backend/js/dataTables.bootstrap5.min.js"></script>
+
+  <script type="text/javascript">
+        /*Block UI CSS*/
+        $.blockUI.defaults.css.border = 'none'; 
+        $.blockUI.defaults.css.padding = '15px';
+        $.blockUI.defaults.css.backgroundColor = '#000';
+        $.blockUI.defaults.css.opacity = '0.8';
+        $.blockUI.defaults.css.color = '#fff';
+        $.blockUI.defaults.css.borderRadius = '10px';
+        $.blockUI.defaults.css.zIndex = '2000';
+        /*Block UI CSS*/
+    </script>
+</html>
