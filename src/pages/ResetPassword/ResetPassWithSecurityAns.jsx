@@ -1,6 +1,29 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ResetPassWithSecurityAns(){
+
+const [email, setEmail] = useState('');
+const [securityQuestion, setSecurityQuestion] = useState('');
+const [securityAnswer, setSecurityAnswer] = useState('');
+
+const handleEmail = (e) => {
+
+}
+
+const handleSecurityQuestion = (e) => {
+
+}
+
+const submitHandler = (e) => {
+
+ console.log(e.target[0].value);
+ console.log(e.target[1].value);
+ console.log(e.target[2].value);
+
+   e.preventDefault();
+}
+
 return(<>
     <section className="bg_spacing">
       <div className="container">
@@ -9,16 +32,14 @@ return(<>
             <div className="col-md-12 col-lg-12 cus_col_form ">
               <div className="form_heading">
                 <h4>Reset Password using security question</h4>
-                <form className="input_cust" method="post"
-                  action="#"
-                  id="resetPassSecurity">
+                <form className="input_cust" id="resetPassSecurity" onSubmit={submitHandler}>
                   <div className="form-group group col-md-12 col-12">
-                    <input type="text" name="email_id" value="" className="form-control cus-form-control" placeholder="" />
+                    <input type="text" name="email_id" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control cus-form-control" placeholder="" />
                     <label className="form__label" htmlFor="">Username <span className="error">(email ID)</span></label>
                   </div>
 
                   <div className="form-group group col-md-12 col-12">
-                    <select name="security_question" className="form-select cus-form-control" id="securityquestion">
+                    <select name="security_question" onChange={(e) => setSecurityQuestion(e.target.value)} className="form-select cus-form-control" id="securityquestion">
                       <option value="">-- Select Question --</option>
                       <option value="What is your Mother's maiden name?">What is your Mother's maiden name?</option>
                       <option value="What is the name of your first School?">What is the name of your first School?
@@ -33,7 +54,7 @@ return(<>
                   </div>
 
                   <div className="form-group group col-md-12 col-12">
-                    <input type="text" name="security_answer" value="" className="form-control cus-form-control"
+                    <input type="text" name="security_answer" value={securityAnswer} onChange={(e) => setSecurityAnswer(e.target.value)} className="form-control cus-form-control"
                       placeholder="" />
                     <label className="form__label" htmlFor="">Security Answer:</label>
                   </div>
