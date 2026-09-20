@@ -6,6 +6,13 @@ import Signup from './pages/Signup/Signup'
 import ForgetPassword from './pages/ForgetPassword/ForgetPassword'
 import ResetPassWithMobileNo from './pages/ResetPassword/ResetPassWithMobileNo'
 import ResetPassWithSecurityAns from './pages/ResetPassword/ResetPassWithSecurityAns'
+import SearchFilter from "./components/SearchFilter/SearchFilter";
+
+import StateManagement from './components/StateManagement/StateManagement'
+import {store} from '../src/app/store'
+import {Provider} from 'react-redux'
+import LifeCycle from '../src/components/FunBaseReactLifeCycle/LifeCycle'
+import NotFound from '../src/pages/ErrorPages/NotFound'
 
 function App() {
 
@@ -13,6 +20,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+
+          <Route path="/" element={
+            <AuthLayout>
+              <Login />
+            </AuthLayout>
+          }>
+          </Route>
 
           <Route path="/login" element={
             <AuthLayout>
@@ -48,6 +62,35 @@ function App() {
             </AuthLayout>
           }>
           </Route>
+
+          <Route path="/search-filter" element={
+            <AuthLayout>
+              <SearchFilter />
+            </AuthLayout>
+          }>
+          </Route>
+
+          <Route path="/state-management" element={
+          <AuthLayout>
+          <Provider store={store}>
+          <StateManagement />
+          </Provider>
+          </AuthLayout>
+          }>
+          </Route>
+
+        <Route path="/life-cycle" element={
+          <AuthLayout>
+            <LifeCycle />
+          </AuthLayout>
+        }></Route>
+
+        <Route path="*" element={
+            <AuthLayout>
+              <NotFound />
+            </AuthLayout>
+          }>
+        </Route>
 
         </Routes>
       </BrowserRouter>

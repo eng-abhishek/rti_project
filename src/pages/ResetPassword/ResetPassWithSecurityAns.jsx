@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import RefreshCaptchaImg from '../../assets/images/refresh.png';
+import ValumeCaptchaImg from '../../assets/images/volume-high-solid.png';
 
 function ResetPassWithSecurityAns(){
 
@@ -7,13 +9,6 @@ const [email, setEmail] = useState('');
 const [securityQuestion, setSecurityQuestion] = useState('');
 const [securityAnswer, setSecurityAnswer] = useState('');
 
-const handleEmail = (e) => {
-
-}
-
-const handleSecurityQuestion = (e) => {
-
-}
 
 const submitHandler = (e) => {
 
@@ -65,18 +60,9 @@ return(<>
                           <span id="captcha_preview_reset_pass_security_quest" className="captcha-code">196893</span>
                         </label>
                         <Link to="" id="reload-captcha">
-                          <img src="#" alt="" />
-                        </Link>
-                        <Link href="javascript: playAudio('_reset_pass_security_quest');">
-                          <img
-                            src="https://delhihighcourt.nic.in/app/rti/public/new_design/images/volume-high-solid.png"
-                            alt="" />
+                          <img src={RefreshCaptchaImg} alt="" />
                         </Link>
                       </div>
-                      <audio id="myAudio_reset_pass_security_quest">
-                        <source src="" type="audio/wav" />
-                        Your browser does not support the audio element.
-                      </audio>
                     </div>
                     <div className="col-12 col-md-12 col-lg-6 offset-lg-1">
                       <div className="form-group group col-md-12 col-12 enter_cap">
@@ -93,7 +79,7 @@ return(<>
                   </div>
                 </form>
                 <div className="forgot_content d-flex justify-content-center">
-                  <p> <Link to="#">Go back to login page</Link></p>
+                  <p> <Link to="/login">Go back to login page</Link></p>
                 </div>
               </div>
             </div>

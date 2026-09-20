@@ -10,14 +10,14 @@ return(
                 <div className="row">
                     <div className="col-md-12">
                         <div className="logo_content login_page_">
-                            <Link href="/">
+                            <Link to="/">
                                 <img src={logo} alt="Delhi High Court" />
                             </Link>
                             <div className="logo-content">
                                 <h4>High Court of Delhi</h4>
                                 <h4>RTI System</h4>
                             </div>
-                            <Link href="/">
+                            <Link to="/">
                             <img src={emblem} alt="" className="emblem w-100" />
                             </Link>
                         </div>

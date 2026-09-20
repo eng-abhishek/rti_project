@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import RefreshCaptchaImg from '../../assets/images/refresh.png';
 
 function ResetPassWithMobileNo(){
 
@@ -97,21 +98,9 @@ function ResetPassWithMobileNo(){
                           <span id="captcha_preview_reset_captcha" className="captcha-code">743889</span>
                         </label>
                         <Link href="javascript:refreshCaptcha('_reset_captcha');" id="reload-captcha">
-                          <img src="https://delhihighcourt.nic.in/app/rti/public/new_design/images/refresh.png" alt="" />
+                          <img src={RefreshCaptchaImg} alt="" />
                         </Link>
-                        <a href="javascript: playAudio('_reset_captcha');">
-                          <img
-                            src="https://delhihighcourt.nic.in/app/rti/public/new_design/images/volume-high-solid.png"
-                            alt="" />
-                        </a>
                       </div>
-
-                      <audio id="myAudio_reset_captcha">
-                        <source src="#" type="audio/wav" />
-                        Your browser does not support the audio element.
-                      </audio>
-                      <input type="hidden" name="captcha_code_reset_captcha" id="captcha_code_reset_captcha"
-                        value="743889" />
                     </div>
                     <div className="col-12 col-md-12 col-lg-6 offset-lg-1">
                       <div className="form-group group col-md-12 col-12 enter_cap">
@@ -127,9 +116,8 @@ function ResetPassWithMobileNo(){
                   </div>
                 </form>
                 <div className="forgot_content d-flex justify-content-center">
-                  <p> <a href="https://delhihighcourt.nic.in/app/rti/login">Go back to login page</a></p>
+                  <p> <Link to="login">Go back to login page</Link></p>
                 </div>
-
               </div>
             </div>
           </div>
