@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
 
-
 function Sidebar(){
 
     return(<>
@@ -27,7 +26,7 @@ function Sidebar(){
                             <i className="bi bi-box-arrow-right"></i>Logout
                         </Link>
                     </nav>
-                </div>
+        </div>
         </>);
 }
 

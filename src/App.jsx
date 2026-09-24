@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthLayout from './layouts/AuthLayout'
+import UserLayout from './layouts/UserLayout'
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import ForgetPassword from './pages/ForgetPassword/ForgetPassword'
@@ -13,6 +14,11 @@ import {store} from '../src/app/store'
 import {Provider} from 'react-redux'
 import LifeCycle from '../src/components/FunBaseReactLifeCycle/LifeCycle'
 import NotFound from '../src/pages/ErrorPages/NotFound'
+
+import UserDashboard from './components/UserPanel/UserDashboard'
+import RtiFillingForm from './components/UserPanel/RtiFillingForm'
+import EditProfile from './components/UserPanel/EditProfile'
+
 
 function App() {
 
@@ -92,6 +98,20 @@ function App() {
           }>
         </Route>
 
+        <Route path="rti-filling" element={
+          <UserLayout>
+            <RtiFillingForm />
+          </UserLayout>
+        }>
+        </Route>
+       
+        <Route path="edit-profile" element={
+          <UserLayout>
+            <EditProfile />
+          </UserLayout>
+        }>
+        </Route>
+       
         </Routes>
       </BrowserRouter>
     </>

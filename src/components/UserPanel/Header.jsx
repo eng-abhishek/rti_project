@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import logo from '../../assets/images/logo.png'
+import user from '../../assets/images/user.png'
 
 function Header() {
     return (<>
@@ -10,7 +12,7 @@ function Header() {
                         <div className="parent_header">
 
                             <div className="logo_dashbiar">
-                                <img src="#" alt="" />
+                                <img src={logo} alt="" />
                                 <div className="logo-content">
                                     <Link to="#">
                                         <h4>High Court of Delhi</h4>
@@ -32,7 +34,7 @@ function Header() {
                                     </ul>
                                 </div>
                                 <div className="profile">
-                                    <img src="#" alt="user" className="emblem" />
+                                    <img src={user} alt="user" className="emblem" />
                                 </div>
                             </div>
                         </div>
