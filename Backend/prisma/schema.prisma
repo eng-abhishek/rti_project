@@ -1,0 +1,278 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+// =====================================================
+// ENUMS
+// =====================================================
+
+enum Gender {
+  M
+  F
+}
+
+enum YesNo {
+  Y
+  N
+}
+
+enum UserRole {
+  is_rti
+  is_fa
+  is_admin
+}
+
+enum RtiStatus {
+  U
+  PP
+  IR
+  AR
+  CR
+  DR
+  RR
+  PCR
+  TR
+  PAIDCR
+}
+
+enum RtiType {
+  Online
+  Offline
+}
+
+enum AppealStatus {
+  U
+  IR
+  AR
+  CR
+  DR
+  RR
+  PCR
+  TR
+}
+
+enum InfoStatus {
+  Active
+  Inactive
+}
+
+enum CommentType {
+  RTI
+  FA
+}
+
+
+// =====================================================
+// USER
+// =====================================================
+
+model User {
+  id           Int       @id @default(autoincrement())
+  is_indian    YesNo
+  name         String
+  email        String    @unique @db.VarChar(100)
+  mobile_no    String    @unique @db.VarChar(100)
+  father_name  String
+  gender       Gender
+  address      String
+  state_id     String
+  district_id  String
+  pin_code     String
+  is_bpl       YesNo
+  bpl_file     String?
+  security_qs  String
+  security_ans String
+  password     String
+  user_role    UserRole?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  rtiInformations         RtiInformation[]         @relation("UserRtis")
+  firstAppealInformations FirstAppealInformation[] @relation("UserAppeals")
+  loginInformations       UserLoginInfo[]
+  adminRtis               RtiInformation[]         @relation("AdminRtis")
+  adminAppeals            FirstAppealInformation[] @relation("AdminAppeals")
+  comments                Comment[]                @relation("AdminComments")
+}
+
+
+// =====================================================
+// EMAIL OTP
+// =====================================================
+
+model EmailOtpVerification {
+  id           Int      @id @default(autoincrement())
+  email_id     String   @db.VarChar(100)
+  otp          Int
+  generated_at DateTime @default(now())
+  expire_at    DateTime?
+
+  @@index([email_id])
+  @@index([expire_at])
+}
+
+
+// =====================================================
+// MOBILE OTP
+// =====================================================
+
+model MobileOtpVerification {
+  id           Int      @id @default(autoincrement())
+  mobile_id    String   @db.VarChar(100)
+  otp          Int
+  generated_at DateTime @default(now())
+  expire_at    DateTime?
+
+  @@index([mobile_id])
+  @@index([expire_at])
+}
+
+
+// =====================================================
+// USER LOGIN INFORMATION
+// =====================================================
+
+model UserLoginInfo {
+  id             Int      @id @default(autoincrement())
+  user_id        Int
+  login_attempts Int?
+  login_at       DateTime?
+  logout_at      DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@index([user_id])
+  @@index([login_at])
+}
+
+
+// =====================================================
+// RTI INFORMATION
+// =====================================================
+
+model RtiInformation {
+  id                Int       @id @default(autoincrement())
+  user_id           Int
+  ref_num           String    @db.VarChar(20)
+  ref_year          String    @db.VarChar(10)
+  diary_num         String    @db.VarChar(20)
+  diary_year        String    @db.VarChar(20)
+  rti_type          RtiType
+  status            RtiStatus
+  title             String    @db.VarChar(255)
+  description       String
+  rejecte_opjection String?   @db.VarChar(100)
+  file              String?   @db.VarChar(50)
+  admin_id          Int?
+  admin_role        String?   @db.VarChar(10)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  user User @relation("UserRtis", fields: [user_id], references: [id], onUpdate: Cascade)
+
+  admin User? @relation("AdminRtis", fields: [admin_id], references: [id], onUpdate: Cascade)
+
+  firstAppeals FirstAppealInformation[]
+
+  comments Comment[] @relation("RtiComments")
+
+  @@index([user_id])
+  @@index([admin_id])
+  @@index([status])
+  @@index([ref_num])
+  @@index([ref_year])
+  @@index([diary_num])
+  @@index([diary_year])
+}
+
+
+// =====================================================
+// FIRST APPEAL INFORMATION
+// =====================================================
+
+model FirstAppealInformation {
+  id                Int          @id @default(autoincrement())
+  user_id           Int
+  rti_id            Int
+  ref_num           String       @db.VarChar(20)
+  ref_year          String       @db.VarChar(10)
+  diary_num         String       @db.VarChar(20)
+  diary_year        String       @db.VarChar(20)
+  rti_type          RtiType
+  status            AppealStatus
+  title             String       @db.VarChar(255)
+  description       String
+  rejecte_opjection String?      @db.VarChar(100)
+  file              String?      @db.VarChar(50)
+  admin_id          Int?
+  admin_role        String?      @db.VarChar(10)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  user User @relation("UserAppeals", fields: [user_id], references: [id], onUpdate: Cascade)
+
+  rti RtiInformation @relation(fields: [rti_id], references: [id], onUpdate: Cascade)
+
+  admin User? @relation("AdminAppeals", fields: [admin_id], references: [id], onUpdate: Cascade)
+
+  comments Comment[] @relation("AppealComments")
+
+  @@index([user_id])
+  @@index([rti_id])
+  @@index([admin_id])
+  @@index([status])
+  @@index([ref_num])
+  @@index([ref_year])
+  @@index([diary_num])
+  @@index([diary_year])
+}
+
+
+// =====================================================
+// COMMENT
+// =====================================================
+
+model Comment {
+  id             Int         @id @default(autoincrement())
+  comment_type   CommentType
+
+  rti_id         Int?
+  appeal_id      Int?
+
+  admin_id       Int
+  admin_role     String      @db.VarChar(10)
+
+  description    String
+  comment_status String      @db.VarChar(10)
+  info_status    InfoStatus
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  admin User @relation("AdminComments", fields: [admin_id], references: [id], onUpdate: Cascade)
+
+  rti RtiInformation? @relation("RtiComments", fields: [rti_id], references: [id], onUpdate: Cascade)
+
+  appeal FirstAppealInformation? @relation("AppealComments", fields: [appeal_id], references: [id], onUpdate: Cascade)
+
+  @@index([rti_id])
+  @@index([appeal_id])
+  @@index([admin_id])
+  @@index([comment_type])
+  @@index([info_status])
+}
